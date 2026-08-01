@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"Créditos",
+  "name":"Créditos",
+  "parent":{
+    "name":"NONEJAM13",
+    "path":"NONEJAM13.yyp",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}
