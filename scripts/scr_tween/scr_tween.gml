@@ -431,7 +431,7 @@ function Tween(target, property, to, duration_steps) constructor {
     }
     
     set_value = function(v) {
-        show_debug_message($"[{ptr(self)}] Valor \"{self.property}\" alterado de {variable_instance_get(self.target, self.property)} para {v}")
+        //show_debug_message($"[{ptr(self)}] Valor \"{self.property}\" alterado de {variable_instance_get(self.target, self.property)} para {v}")
         
         if(is_struct(self.target))
             variable_struct_set(self.target, self.property, v)

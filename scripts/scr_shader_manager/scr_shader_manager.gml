@@ -126,7 +126,13 @@ function ShaderManager() constructor {
             get_sprite_texel_size(sprite, subimg);
     }
     
-    
+    function for_surface(surf) {
+        var texture = surface_get_texture(surf)
+        self.parameters.texel_size.value = [
+            texture_get_texel_width(texture),
+            texture_get_texel_height(texture)
+        ]
+    }
     
     function apply() {
         shader_set(shd_shaders);

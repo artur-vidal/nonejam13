@@ -1,11 +1,11 @@
 /// @description Retorna ou cria uma instância global do objeto
 /// @param {Asset.GMObject} obj O objeto que será retornado
 function singleton(obj){
-    static instance = noone
+    var instance = noone
     
     // checagens extras caso a instância desapareça
     if(!instance || !instance_exists(instance)) {
-        instance = instance_find(instance, 0)
+        instance = instance_find(obj, 0)
         
         if(!instance) { 
             object_set_persistent(obj, true)
