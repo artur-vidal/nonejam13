@@ -1,1 +1,0 @@
-sprite.draw(x, y)

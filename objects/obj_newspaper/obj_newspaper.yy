@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_skill_node",
+  "%Name":"obj_newspaper",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":53,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_skill_node",
+  "name":"obj_newspaper",
   "overriddenProperties":[],
   "parent":{
-    "name":"Skill Tree",
-    "path":"folders/Objects/Skill Tree.yy",
+    "name":"Papers",
+    "path":"folders/Objects/Papers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_skill_node",
-    "path":"sprites/spr_skill_node/spr_skill_node.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

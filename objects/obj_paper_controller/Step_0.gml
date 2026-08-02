@@ -8,6 +8,7 @@ if(array_length(papers) > 0) {
     if !(dragging && dragging != top_paper) {
         if(!hovering) {
             top_paper.hover()
+            window_set_cursor(cr_size_all)
             hovering = top_paper
         } else {
             if(clicking) {
@@ -25,6 +26,7 @@ if(array_length(papers) > 0) {
     
     if(hovering && !dragging) {
         hovering.unhover()
+        window_set_cursor(cr_default)
         hovering = noone
     } else if(!clicking and dragging) {
         dragging.undrag()
@@ -32,5 +34,3 @@ if(array_length(papers) > 0) {
     }
     
 }
-
-window_set_cursor(hovering ? cr_size_all : cr_default)

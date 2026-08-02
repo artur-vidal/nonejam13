@@ -14,6 +14,7 @@ sprite = new Sprite(spr_paper)
 width = 0
 height = 0
 scale = 1
+padding = 8
 
 xto = 0
 yto = 0

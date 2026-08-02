@@ -19,21 +19,15 @@ function SkillTree() constructor {
         ),
     ]
     
-    bought_upgrades = []
-    
     get_node = function(id) {
-        for (var i = 0; i < array_length(tree); i++) {
-        	var node = tree[i]
+        for (var i = 0; i < array_length(self.tree); i++) {
+        	var node = self.tree[i]
             if(node.id == id) {
                 return node
             }
         }
         
         return undefined
-    }
-    
-    bought = function(id) {
-        return array_contains(self.bought_upgrades, id)
     }
 }
 

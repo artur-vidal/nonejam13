@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_skill_tree",
+  "%Name":"obj_paper_area",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_skill_tree",
+  "name":"obj_paper_area",
   "overriddenProperties":[],
   "parent":{
-    "name":"Skill Tree",
-    "path":"folders/Objects/Skill Tree.yy",
+    "name":"Papers",
+    "path":"folders/Objects/Papers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_area",
+    "path":"sprites/spr_area/spr_area.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

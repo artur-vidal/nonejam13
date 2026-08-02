@@ -110,10 +110,10 @@ function move_and_collide_simple_tag(_hspd, _vspd, _tags) {
 /// @param {real} py The y position to check.
 /// @param {any*} object The object to check.
 /// @returns {id} 
-function instance_top_position(_px, _py, _object) {
+function instance_top_position(_px, _py, _object, _notme = true) {
     var _topInstance = noone,
         _list = ds_list_create(),
-        _num = collision_point_list(_px, _py, _object, false, true, _list, false);
+        _num = collision_point_list(_px, _py, _object, false, _notme, _list, false);
     if (_num > 0) {
         var i = 0;
         repeat(_num) {
