@@ -18,15 +18,16 @@ termos = [
 ]
 
 space_width = 8
-line_h = 14
-padding_x = 16
-padding_y = 16
-max_width = 200
+line_h = 10
+padding_x = 8
+padding_y = 12
+max_width = 80
+text_scale = 0.65
 
 // se torna true quanto todos os termos não-secretos forem recortados
 trashable = false
 trash_alpha = 0
-trash_gap = 8
+trash_gap = 4
 hovering_trash = false
 active = true
 
@@ -69,7 +70,7 @@ function num_linhas() {
     for (var i = 0; i < array_length(tokens); i++) {
         _max_y = max(_max_y, tokens[i].y)
     }
-    return floor((_max_y) / line_h)
+    return floor((_max_y) / (line_h * text_scale))
 }
 
 function tokenizar(_str, _lista_termos) {
@@ -152,8 +153,8 @@ function calcular_layout() {
     
     for (var i = 0; i < array_length(tokens); i++) {
         var tok = tokens[i]
-        var _largura = string_width(tok.texto)
-        var _altura = string_height(tok.texto)
+        var _largura = string_width(tok.texto) * text_scale
+        var _altura = string_height(tok.texto) * text_scale
         
         // quebra de linha se não couber
         if (_x + _largura > max_width && _x > padding_x) {
@@ -198,8 +199,8 @@ function all_tokens_cut() {
 }
 
 function trash() {
-    create_tween(id, "y", room_height, seconds(3))
-        .ease(ANIMATION_EASINGS.OUT_BACK)
+    create_tween(id, "y", room_height + 10, seconds(2))
+        .ease(ANIMATION_EASINGS.OUT_CUBIC)
         .on_complete(destroy)
     
     active = false
@@ -215,3 +216,4 @@ rebuild_layout()
 create_tween(id, "y", room_height - get_height() + 16, seconds(1))
     .from(room_height)
     .ease(ANIMATION_EASINGS.OUT_CUBIC)
+x = 20

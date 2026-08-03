@@ -28,8 +28,8 @@ for (var i = 0; i < array_length(tokens); i++) {
             tok.recortado = true
             
             var papel = instance_create_depth(
-                mouse_x - tok.largura / 2, 
-                mouse_y - tok.altura, 
+                mouse_x, 
+                mouse_y, 
                 0, 
                 obj_paper
             )

@@ -1,11 +1,11 @@
 var is_hovering_now = is_hovered()
 var holding = mouse_check_button(mb_left)
 
-width = string_width(content) + padding * 2
-height = string_height(content) + padding * 2
+width = (string_width(content) + padding * 2) * scale
+height = (string_height(content) + padding * 2) * scale
 
-xto = mouse_x - width / 2
-yto = mouse_y - height / 2
+xto = mouse_x
+yto = mouse_y
 
 if(dragging) {
     angle = (xto - x) / 15

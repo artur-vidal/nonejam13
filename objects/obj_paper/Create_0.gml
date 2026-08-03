@@ -1,6 +1,5 @@
 content = "papéu"
 
-padding = 4
 angle = 0
 
 hovering = false
@@ -13,8 +12,9 @@ sprite = new Sprite(spr_paper)
 
 width = 0
 height = 0
-scale = 1
-padding = 8
+base_scale = 0.55
+scale = base_scale
+padding = 4
 
 xto = 0
 yto = 0
@@ -38,7 +38,7 @@ unhover = function() {
 
 drag = function() {
     if(scale_tween) scale_tween.cancel();
-    scale_tween = create_tween(id, "scale", 1.25, ms(500))
+    scale_tween = create_tween(id, "scale", base_scale * 1.1, ms(500))
         .ease(ANIMATION_EASINGS.OUT_ELASTIC)
     
     dragging = true
@@ -46,7 +46,7 @@ drag = function() {
 
 undrag = function() {
     if(scale_tween) scale_tween.cancel();
-    scale_tween = create_tween(id, "scale", 1, ms(200))
+    scale_tween = create_tween(id, "scale", base_scale, ms(200))
         .ease(ANIMATION_EASINGS.OUT_CUBIC)
     
     dragging = false
@@ -56,9 +56,9 @@ is_hovered = function() {
     return point_in_rectangle(
         mouse_x, 
         mouse_y, 
-        x, 
-        y, 
-        x + width, 
-        y + height
+        x - width / 2, 
+        y - height / 2, 
+        x + width / 2, 
+        y + height / 2
     )
 }

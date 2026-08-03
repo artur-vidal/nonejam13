@@ -1,9 +1,9 @@
-sprite.set_xscale(scale * (width / sprite_get_width(spr_paper)))
-sprite.set_yscale(scale * (height / sprite_get_height(spr_paper)))
+sprite.set_xscale(width / sprite_get_width(spr_paper))
+sprite.set_yscale(height / sprite_get_height(spr_paper))
 sprite.set_angle(angle)
 
-sprite.draw_shadow(x + width / 2, y + height / 2 + (dragging ? 12 : 4), 0.025, 0)
-sprite.draw(x + width / 2, y + height / 2)
+sprite.draw_shadow(x, y + (dragging ? 4 : 2), 0.025, 0)
+sprite.draw(x, y)
 
 var _prev_font = draw_get_font()
 draw_set_font(fnt_paper)
@@ -12,11 +12,11 @@ draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
 draw_text_transformed(
-    x + width / 2,
-    y + height / 2,
+    x,
+    y,
     content,
-    scale,
-    scale,
+    scale * 0.9,
+    scale * 0.9,
     angle
 )
 

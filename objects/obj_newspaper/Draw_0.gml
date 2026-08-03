@@ -17,22 +17,22 @@ for (var i = 0; i < array_length(tokens); i++) {
     if (_tok.recortavel && _tok.recortado) {
         // riscado/apagado: cinza + linha por cima
         draw_set_color(c_gray)
-        draw_text(_draw_x, _draw_y, _tok.texto)
+        draw_text_transformed(_draw_x, _draw_y, _tok.texto, 0.7, 0.7, 0)
         draw_line(_draw_x, _draw_y + _tok.altura / 2, _draw_x + _tok.largura, _draw_y + _tok.altura / 2)
         draw_set_color(c_black)
     } else if (_tok.recortavel) {
         // recortável e ainda não recortada: pode destacar (ex: sublinhado sutil) pra dar affordance
         draw_set_color(c_black)
-        draw_text(_draw_x, _draw_y, _tok.texto)
+        draw_text_transformed(_draw_x, _draw_y, _tok.texto, 0.7, 0.7, 0)
         // opcional: linha pontilhada ou cor diferente pra indicar "isso é clicável"
     } else {
         // texto normal, não recortável
         draw_set_color(c_black)
-        draw_text(_draw_x, _draw_y, _tok.texto)
+        draw_text_transformed(_draw_x, _draw_y, _tok.texto, 0.7, 0.7, 0)
     }
 }
 
 // desenhando o sprite de lixeira
 draw_set_alpha(trash_alpha)
-draw_sprite(spr_trash, 0, x + get_width() + 16, y)
+draw_sprite(spr_trash, trashable && active && hovering_trash, x + get_width() + trash_gap, y)
 draw_set_alpha(1)
