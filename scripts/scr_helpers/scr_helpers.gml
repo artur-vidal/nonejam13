@@ -38,3 +38,14 @@ function get_sprite_texel_size(sprite, index) {
         texture_get_texel_height(texture)
     ];
 }
+
+/// @description Cor RGB simples.
+function RGB() constructor {
+    r = 255
+    g = 255
+    b = 255
+    
+    compute = function() {
+        return make_colour_rgb(self.r, self.g, self.b)
+    } 
+}

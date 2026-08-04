@@ -35,6 +35,7 @@ for (var i = 0; i < array_length(tokens); i++) {
             )
             
             papel.content = tok.texto
+            audio_play_sound(choose(snd_paper_rip_1, snd_paper_rip_2), 0, 0)
             
             break // não preciso mais procurar
         }

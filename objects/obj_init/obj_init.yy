@@ -29,7 +29,7 @@
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"goto","filters":[
         "GMRoom",
-      ],"listItems":[],"multiselect":false,"name":"goto","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_game","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"goto","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_day","path":"rooms/rm_day/rm_day.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_day","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

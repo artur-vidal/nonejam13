@@ -1,9 +1,14 @@
-content = "papéu"
+term = get_terms()[random_range(0, array_length(get_terms()))]
 
 angle = 0
 
 hovering = false
 dragging = false
+
+on_green = false
+on_red = false
+
+color = new RGB()
 
 angle_tween = undefined
 scale_tween = undefined
@@ -12,9 +17,12 @@ sprite = new Sprite(spr_paper)
 
 width = 0
 height = 0
+padding = 4
+
 base_scale = 0.55
 scale = base_scale
-padding = 4
+scale_decrement = 0
+
 
 xto = 0
 yto = 0
@@ -42,6 +50,7 @@ drag = function() {
         .ease(ANIMATION_EASINGS.OUT_ELASTIC)
     
     dragging = true
+    audio_play_sound(snd_paper_grab, 0, 0)
 }
 
 undrag = function() {
@@ -50,6 +59,7 @@ undrag = function() {
         .ease(ANIMATION_EASINGS.OUT_CUBIC)
     
     dragging = false
+    audio_play_sound(snd_paper_grab, 0, 0, 1, 0, .7)
 }
 
 is_hovered = function() {
@@ -61,4 +71,11 @@ is_hovered = function() {
         x + width / 2, 
         y + height / 2
     )
+}
+
+poof = function() {
+    instance_destroy(id)
+    audio_play_sound(choose(snd_bag_1, snd_bag_2), 0, 0)
+    ROOT.particle_system.poof(x, y)
+    ROOT.events.emit("paper-destroyed")
 }
