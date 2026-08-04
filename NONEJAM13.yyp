@@ -243,6 +243,7 @@
     {"id":{"name":"spr_janela","path":"sprites/spr_janela/spr_janela.yy",},},
     {"id":{"name":"spr_mesa","path":"sprites/spr_mesa/spr_mesa.yy",},},
     {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},},
+    {"id":{"name":"spr_paisagem","path":"sprites/spr_paisagem/spr_paisagem.yy",},},
     {"id":{"name":"spr_paper","path":"sprites/spr_paper/spr_paper.yy",},},
     {"id":{"name":"spr_ponto_upgrade","path":"sprites/spr_ponto_upgrade/spr_ponto_upgrade.yy",},},
     {"id":{"name":"spr_porta","path":"sprites/spr_porta/spr_porta.yy",},},
