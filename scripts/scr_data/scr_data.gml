@@ -15,18 +15,19 @@ enum Upgrades {
 
 /// @param {real} _id
 /// @param {string} text
-/// @param {Enum.TermTypes} type
+/// @param {Enum.TermTypes} _type
 /// @param {Struct.NewsModifiers} _modifiers
 /// @param {Array<string>} _topics
 function Term(
     _id,
     text,
-    type,
+    _type,
     _modifiers,
     _topics
 ) constructor {
     id = _id
     content = text
+    type = _type
     modifiers = _modifiers
     topics = _topics
 }
@@ -251,7 +252,11 @@ function get_newspaper(num) {
             new Headline("Bandido rouba idoso no meio da rua", [
                 new HeadlineTerm(20),
                 new HeadlineTerm(18),
-                new HeadlineTerm(9)
+                new HeadlineTerm(8)
+            ]),
+            new Headline("Bandeira Nacional colocada em chamas em cidade no Taquistão", [
+                new HeadlineTerm(28),
+                new HeadlineTerm(3)
             ])
         ]),
         new Newspaper([

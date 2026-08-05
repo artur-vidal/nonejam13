@@ -18,7 +18,7 @@ sprite = new Sprite(spr_paper)
 width = 0
 height = 0
 padding = 0
-mask_padding = 6
+mask_padding = 4
 
 base_scale = 0.55
 scale = base_scale

@@ -22,9 +22,25 @@ draw_text_transformed(
 )
 
 draw_set_font(_prev_font)
-draw_set_colour(c_white)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
+
+switch (term.type) {
+	case TermTypes.LOCATION:
+        draw_set_colour(#A0FFA0)
+        break
+	case TermTypes.SUBJECT:
+        draw_set_colour(#FFA0A0)
+        break
+	case TermTypes.OBJECT:
+        draw_set_colour(#A0A0FF)
+        break 
+}
+
+draw_circle(x - width / 2, y - height / 2, 3, false)
+draw_set_colour(#101027)
+draw_circle(x - width / 2, y - height / 2, 3, true)
+draw_set_colour(c_white)
 
 if(on_green || on_red) {
     draw_sprite(spr_paper_check, on_red, x + width / 2 - 4, y - height / 2 - 2)
