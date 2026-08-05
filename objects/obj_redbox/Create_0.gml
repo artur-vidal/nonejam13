@@ -11,7 +11,7 @@ drop = function(data) {
     var game = GAME
     
     game.remove_term(paper.term)
-    paper.poof()
+    paper.poof_and_destroy()
     
     create_tween(id, "image_xscale", 1, ms(700))
         .ease(ANIMATION_EASINGS.OUT_BACK)

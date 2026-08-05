@@ -38,7 +38,18 @@ is_full = function() {
 }
 
 retrieve_last_term = function() {
-    return array_pop(selected_terms)
+    if(array_length(selected_terms) > 0) {
+        var paper_controller = singleton(obj_paper_controller)
+        var x1 = paper_controller.drag_area.x1
+        var y1 = paper_controller.drag_area.y1
+        var x2 = paper_controller.drag_area.x2
+        var y2 = paper_controller.drag_area.y2
+        
+        var _x = irandom_range(x1, x2)
+        var _y = irandom_range(y1, y2)
+        var pap = create_paper(array_pop(selected_terms).term, _x, _y, false)
+        pap.poof()
+    }
 }
 
 ROOT.events.connect("greenbox-drop", add_term)

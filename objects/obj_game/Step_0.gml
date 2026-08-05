@@ -4,9 +4,12 @@ if(period == "day") {
     }
     
     if(ended_period) {
-        show_debug_message("NOITEEEE")
+        to_night()
     }
 } else if (period == "night") {
     
 }
 
+if(keyboard_check_pressed(vk_space)) {
+    retrieve_last_term()
+}

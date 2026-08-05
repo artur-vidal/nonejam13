@@ -27,7 +27,7 @@ draw_roundrect_ext(
 )
 
 var greenbox = instance_find(obj_greenbox, 0)
-var redbox = instance_find(obj_greenbox, 0)
+var redbox = instance_find(obj_redbox, 0)
 draw_sprite(spr_caixa, 0, greenbox.x, greenbox.y)
 draw_sprite(spr_triturador, 0, redbox.x, redbox.y)
 

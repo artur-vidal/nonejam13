@@ -9,7 +9,7 @@ part_type_shape(poof_type, pt_shape_disk);
 part_type_size(poof_type, 0.03, 0.05, 0, 0);
 part_type_scale(poof_type, 1, 1);
 part_type_speed(poof_type, 1, 2, -0.06, 0);
-part_type_direction(poof_type, 0, 360, 0, 0);
+part_type_direction(poof_type, 30, 150, 0, 0);
 part_type_gravity(poof_type, 0, 0);
 part_type_orientation(poof_type, 0, 0, 0, 0, false);
 part_type_colour3(poof_type, $FFFFFF, $D8FFFB, $D3FBFF);
@@ -20,6 +20,7 @@ part_type_life(poof_type, 30, 30);
 poof_emitter = part_emitter_create(poof_ps);
 
 poof = function(x, y) {
-    part_emitter_burst(poof_ps, poof_emitter, poof_type, 50);
+    part_particles_clear(poof_ps)
+    part_emitter_burst(poof_ps, poof_emitter, poof_type, 30);
     part_system_position(poof_ps, x, y);
 }

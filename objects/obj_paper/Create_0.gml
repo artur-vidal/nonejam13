@@ -83,8 +83,12 @@ is_hovered = function() {
 
 poof = function() {
     audio_play_sound(choose(snd_bag_1, snd_bag_2), 0, 0)
-    
     ROOT.particle_system.poof(x, y)
+}
+
+poof_and_destroy = function() {
+    poof()
+    
     ROOT.events.emit("paper-destroyed")
     call_later(1, time_source_units_frames, method(id, function() {
         instance_destroy(id)
