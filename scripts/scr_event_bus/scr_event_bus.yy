@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_event_bus",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_event_bus",
+  "parent":{
+    "name":"Utilitários",
+    "path":"folders/Scripts/Utilitários.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
