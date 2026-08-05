@@ -19,20 +19,20 @@ function singleton(obj){
 }
 
 /// @description Converte o número de segundos passado em steps
-/// @param {int} n O número de segundos
+/// @param {real} n O número de segundos
 function seconds(n) {
     return floor(n * game_get_speed(gamespeed_fps))
 }
 
 /// @description Converte o número de milissegundos passado em steps
-/// @param {int} n O número de milissegundos
+/// @param {real} n O número de milissegundos
 function ms(n) {
     return floor(n / 1000 * game_get_speed(gamespeed_fps))
 }
 
 /// @description Retorna o tamanho de um pixel do sprite passado
 /// @param {Asset.GMSprite} sprite O sprite a checar
-/// @param {int} index O index do sprite a checar
+/// @param {real} index O index do sprite a checar
 function get_sprite_texel_size(sprite, index) {
     var texture = sprite_get_texture(sprite, index);
     return [

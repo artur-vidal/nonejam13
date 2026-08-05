@@ -15,19 +15,19 @@ state = {
     confidence: 60,
     seriousness: 80,
     
-    // upgrades
+    // Upgrades
     upgrade_points: 0,
     upgrade_levels: [
-        0, // UPGRADES.CARTEIROS
-        0, // UPGRADES.TERMOS
-        0, // UPGRADES.BESTEIROL
-        0, // UPGRADES.APELATIVO
-        0, // UPGRADES.VOCABULARIO
-        0 // UPGRADES.BOAIMAGEM
+        0, // Upgrades.CARTEIROS
+        0, // Upgrades.TERMOS
+        0, // Upgrades.BESTEIROL
+        0, // Upgrades.APELATIVO
+        0, // Upgrades.VOCABULARIO
+        0 // Upgrades.BOAIMAGEM
     ],
     get_upgrade_effect: function(upgrade_id) {
         var up_level = self.upgrade_levels[upgrade_id]
-        var upgrade = get_upgrades(upgrade_id)
+        var upgrade = get_Upgrades(upgrade_id)
         return (up_level > 1) ? upgrade.effect[up_level - 1] : upgrade.zero
     }
 }

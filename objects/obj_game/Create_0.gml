@@ -3,6 +3,9 @@ ended_period = false
 playing = true
 
 // DIA DIA DIA DIA DIA
+newspaper_index = -1
+today_news = [0, 1]
+
 selected_terms = []
 
 add_term = function(term) {
@@ -30,7 +33,7 @@ term_count = function() {
 }
 
 max_terms = function() {
-    return ROOT.state.get_upgrade_effect(UPGRADES.VOCABULARIO)
+    return ROOT.state.get_upgrade_effect(Upgrades.VOCABULARIO)
 }
 
 is_full = function() {
@@ -63,11 +66,8 @@ retrieve_last_term = function() {
     }
 }
 
-ROOT.events.connect("greenbox-drop", add_term)
-ROOT.events.connect("redbox-drop", remove_term)
-
 ended_news = function() {
-    return newspaper_index > array_length(day_news) - 1
+    return newspaper_index > array_length(today_news) - 1
 }
 
 next_news = function() {
@@ -76,15 +76,15 @@ next_news = function() {
         return
     }
     
-    create_newspaper(day_news[newspaper_index])
+    create_newspaper(today_news[newspaper_index])
 }
 
-newspaper_index = -1
-
-day_news = [0, 1]
+ROOT.events.connect("greenbox-drop", add_term)
+ROOT.events.connect("redbox-drop", remove_term)
 ROOT.events.connect("next-news", next_news)
 
 // NOITE NOITE NIOTE NOITE
+// implementar
 
 // gerais
 pause = function() {
@@ -99,8 +99,8 @@ resume = function() {
 
 to_night = function() {
     period = "night"
-    room_goto(rm_night)
     ended_period = false
+    room_goto(rm_night)
 }
 
 // inicialização
