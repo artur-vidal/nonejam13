@@ -40,15 +40,26 @@ is_full = function() {
 retrieve_last_term = function() {
     if(array_length(selected_terms) > 0) {
         var paper_controller = singleton(obj_paper_controller)
-        var x1 = paper_controller.drag_area.x1
-        var y1 = paper_controller.drag_area.y1
-        var x2 = paper_controller.drag_area.x2
-        var y2 = paper_controller.drag_area.y2
+        var x1 = paper_controller.drag_area.x1 + 16
+        var y1 = paper_controller.drag_area.y1 + 16
+        var x2 = paper_controller.drag_area.x2 - 16
+        var y2 = paper_controller.drag_area.y2 - 16
         
         var _x = irandom_range(x1, x2)
         var _y = irandom_range(y1, y2)
-        var pap = create_paper(array_pop(selected_terms).term, _x, _y, false)
-        pap.poof()
+        
+        var greenbox = singleton(obj_greenbox)
+        var redbox = singleton(obj_redbox)
+        
+        var element = array_pop(selected_terms)
+        var _inst_x = (element.added ? greenbox.x : redbox.x)
+        var _inst_y = (element.added ? greenbox.y : redbox.y)
+        
+        var pap = create_paper(element.term, _inst_x, _inst_y, false)
+        pap.xto = _x
+        pap.yto = _y
+        pap.original_x = _x
+        pap.original_y = _y
     }
 }
 

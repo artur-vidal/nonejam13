@@ -26,10 +26,12 @@ draw_roundrect_ext(
     false
 )
 
-var greenbox = instance_find(obj_greenbox, 0)
-var redbox = instance_find(obj_redbox, 0)
-draw_sprite(spr_caixa, 0, greenbox.x, greenbox.y)
-draw_sprite(spr_triturador, 0, redbox.x, redbox.y)
+if(GAME.period == "day") {
+    var greenbox = singleton(obj_greenbox)
+    var redbox = singleton(obj_redbox)
+    draw_sprite(spr_caixa, 0, greenbox.x, greenbox.y)
+    draw_sprite(spr_triturador, 0, redbox.x, redbox.y)
+}
 
 gpu_set_blendmode(_old_blend)
 
