@@ -11,8 +11,8 @@
   "name":"obj_paper_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Day",
-    "path":"folders/Objects/Gameplay/Day.yy",
+    "name":"Gameplay",
+    "path":"folders/Objects/Gameplay.yy",
   },
   "parentObjectId":null,
   "persistent":true,

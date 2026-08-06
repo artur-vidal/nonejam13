@@ -20,13 +20,6 @@ if (array_length(papers) > 0) {
             }
         } else if (!holding) {
             drop(dragging)
-            if(dragging) {
-                if(!mouse_in_area()) {
-                    dragging.go_back()
-                }
-                dragging.undrag(mouse_in_area())
-                dragging = noone
-            }
         }
     }
 } else {
@@ -36,13 +29,6 @@ if (array_length(papers) > 0) {
         hovering = noone
     } else if (!holding && dragging) {
         drop(dragging)
-        if(dragging) {
-            if(!mouse_in_area()) {
-                dragging.go_back()
-            }
-            dragging.undrag(mouse_in_area())
-            dragging = noone
-        }
     }
 }
 
@@ -50,6 +36,6 @@ area_rect_alpha = lerp(
     area_rect_alpha, 
     (!dragging || (dragging && mouse_in_area())) 
         ? 0 
-        : 0.75, 
+        : 0.5, 
     0.05
 )

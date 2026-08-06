@@ -10,6 +10,8 @@ if(period == "day") {
     
 }
 
-if(period == "day" && keyboard_check_pressed(vk_space)) {
-    retrieve_last_term()
+if(keyboard_check_pressed(vk_space)) {
+    if(period == "day") {
+        retrieve_last_box_term()
+    }
 }

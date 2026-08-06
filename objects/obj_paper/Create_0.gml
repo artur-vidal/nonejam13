@@ -1,9 +1,10 @@
-term = get_terms(1)
+term = get_terms(irandom_range(1, 36))
 
 angle = 0
 
 hovering = false
 dragging = false
+hovering_slot = undefined
 
 on_green = false
 on_red = false
@@ -17,12 +18,13 @@ sprite = new Sprite(spr_paper)
 
 width = 0
 height = 0
-padding = 0
+padding = 2
 mask_padding = 4
 
 base_scale = 0.55
 scale = base_scale
 scale_decrement = 0
+scale_decrement_max = 0.1
 
 xto = x
 yto = y
@@ -56,12 +58,12 @@ drag = function() {
     audio_play_sound(snd_paper_grab, 0, 0)
 }
 
-undrag = function(dropped_in_area = true) {
+undrag = function(valid_pos = true) {
     if(scale_tween) scale_tween.cancel();
     scale_tween = create_tween(id, "scale", base_scale, ms(200))
         .ease(ANIMATION_EASINGS.OUT_CUBIC)
     
-    if(dropped_in_area) {
+    if(valid_pos) {
         original_x = x
         original_y = y
     }

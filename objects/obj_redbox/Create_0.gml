@@ -11,7 +11,6 @@ drop = function(data) {
     var game = GAME
     
     game.remove_term(paper.term)
-    paper.poof_and_destroy()
     
     create_tween(id, "image_xscale", 1, ms(700))
         .ease(ANIMATION_EASINGS.OUT_BACK)
@@ -20,6 +19,9 @@ drop = function(data) {
     create_tween(id, "image_yscale", 1, ms(700))
         .ease(ANIMATION_EASINGS.OUT_BACK)
         .from(0.6)
+    
+    data.accepted = true
+    data.destroy = true
 }
 
 ROOT.events.connect("paper-drop", drop)

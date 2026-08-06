@@ -50,6 +50,36 @@ function set_cursor(i) {
     ][i]
 }
 
+/// @description Usa draw_set_colour() com a cor do tema.
+/// @param {Enum.TermTypes} type
+function set_term_type_colour(type) {
+    switch (type) {
+   	case TermTypes.SUBJECT:
+           draw_set_colour(#FFA0A0)
+           break
+   	case TermTypes.LOCATION:
+           draw_set_colour(#A0FFA0)
+           break
+   	case TermTypes.OBJECT:
+           draw_set_colour(#A0A0FF)
+           break 
+   }
+}
+
+/// @description Desenha um retângulo GROSSO.
+/// @param {real} x1
+/// @param {real} y1
+/// @param {real} x2
+/// @param {real} y2
+/// @param {real} thickness
+function draw_rectangle_thick(x1, y1, x2, y2, thickness) {
+    var ht = thickness / 2 // half thickness
+    draw_line_width(x1 - ht, y1, x2 + ht, y1, thickness) 
+    draw_line_width(x1, y1 - ht, x1, y2 + ht, thickness)
+    draw_line_width(x1 - ht, y2, x2 + ht, y2, thickness)
+    draw_line_width(x2, y1 - ht, x2, y2 + ht, thickness)
+}
+
 /// @description Cor RGB simples.
 function RGB() constructor {
     r = 255

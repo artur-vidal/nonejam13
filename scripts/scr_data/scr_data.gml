@@ -191,6 +191,46 @@ function NewspaperDeco() constructor {
     }
 }
 
+
+// FRASES MONTAVEIS
+
+/// @param {Array<Struct.SentenceBlock>} _blocks
+function Sentence(_blocks, _modifiers = new NewsModifiers()) constructor {
+    blocks = _blocks
+    modifiers = _modifiers
+}
+
+/// @param {string} _content
+function SentenceBlock(_content) constructor {
+    content = _content
+    term = undefined
+    
+    has_content = function() {
+        return self.content != ""
+    }
+    
+    get_width = function(scale = 1) {
+        if(self.has_content()) {
+            return string_width(self.content) * scale
+        } else {
+            return 36 * scale
+        }
+    }
+    
+    get_height = function(scale = 1) {
+        if(self.has_content()) {
+            return string_height(self.content) * scale
+        } else {
+            return 12 * scale
+        }
+    }
+}
+
+/// @param {Enum.TermTypes} _type
+function SentenceSlot(_type) : SentenceBlock("") constructor {
+    type = _type
+}
+
 /// @param {real} id
 /// @returns {Array<Struct.Term>|Struct.Term}
 function get_terms(id = undefined) {
@@ -245,6 +285,8 @@ function get_terms(id = undefined) {
     }
 }
 
+/// @param {real} num
+/// @returns {Array<Struct.Newspaper>}
 function get_newspaper(num) {
     static _newspapers = [
         new Newspaper([
@@ -274,9 +316,30 @@ function get_newspaper(num) {
     return _newspapers[num]
 }
 
+/// @param {real} index
+/// @returns {Struct.Sentence}
+function get_sentence(index) {
+    static _sentences = [
+        new Sentence([
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("roubado em"),
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("por"),
+            new SentenceSlot(TermTypes.SUBJECT),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("se casa com"),
+            new SentenceSlot(TermTypes.SUBJECT),
+        ]),
+    ]
+    
+    return _sentences[index]
+}
+
 /// @param {real} id
 /// @returns {Array<Struct>|Struct}
-function get_Upgrades(id = undefined) {
+function get_upgrades(id = undefined) {
     static _Upgrades = [
         {
             id: Upgrades.CARTEIROS,
@@ -337,3 +400,4 @@ function get_Upgrades(id = undefined) {
         return _Upgrades   
     }
 }
+

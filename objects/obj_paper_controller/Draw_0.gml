@@ -17,10 +17,10 @@ gpu_set_blendmode(bm_subtract)
 draw_set_alpha(1)
 
 draw_roundrect_ext(
-    drag_area.x1, 
-    drag_area.y1, 
-    drag_area.x2,
-    drag_area.y2, 
+    get_drag_area().x1, 
+    get_drag_area().y1, 
+    get_drag_area().x2,
+    get_drag_area().y2, 
     8, 
     8, 
     false

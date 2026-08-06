@@ -1,5 +1,8 @@
-sprite.set_xscale(width / sprite_get_width(spr_paper))
-sprite.set_yscale(height / sprite_get_height(spr_paper))
+var sprite_xscale = width / sprite_get_width(spr_paper)
+var sprite_yscale = height / sprite_get_height(spr_paper)
+
+sprite.set_xscale(sprite_xscale)
+sprite.set_yscale(sprite_yscale)
 sprite.set_angle(angle)
 sprite.set_color(color.compute())
 
@@ -25,21 +28,8 @@ draw_set_font(_prev_font)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 
-switch (term.type) {
-	case TermTypes.LOCATION:
-        draw_set_colour(#A0FFA0)
-        break
-	case TermTypes.SUBJECT:
-        draw_set_colour(#FFA0A0)
-        break
-	case TermTypes.OBJECT:
-        draw_set_colour(#A0A0FF)
-        break 
-}
-
-draw_circle(x - width / 2, y - height / 2, 3, false)
-draw_set_colour(#101027)
-draw_circle(x - width / 2, y - height / 2, 3, true)
+set_term_type_colour(term.type)
+draw_sprite_ext(spr_paper_marker, term.type, x, y, sprite_xscale, sprite_yscale, angle, draw_get_colour(), 1)
 draw_set_colour(c_white)
 
 if(on_green || on_red) {
