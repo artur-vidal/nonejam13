@@ -12,21 +12,21 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"1ef249b1-02f4-430e-a73a-710f1bf2fa8e","name":"1ef249b1-02f4-430e-a73a-710f1bf2fa8e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0a51ca5e-ad89-4b59-b393-7be1d16623c3","name":"0a51ca5e-ad89-4b59-b393-7be1d16623c3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":84,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"9b2e1f9a-940a-466c-8f8c-d182bb943dd2","blendMode":0,"displayName":"default","isLocked":false,"name":"9b2e1f9a-940a-466c-8f8c-d182bb943dd2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"e75af7df-7b90-46d0-b50d-fb0d10bca48c","blendMode":0,"displayName":"default","isLocked":false,"name":"e75af7df-7b90-46d0-b50d-fb0d10bca48c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_moldura",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Cenario",
+    "path":"folders/Sprites/Cenario.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1ef249b1-02f4-430e-a73a-710f1bf2fa8e","path":"sprites/spr_moldura/spr_moldura.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7cab4545-63ad-4679-a748-6d21f9e80eae","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0a51ca5e-ad89-4b59-b393-7be1d16623c3","path":"sprites/spr_moldura/spr_moldura.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f1e3db12-d04f-4e53-ae2d-d2fee3bdd896","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

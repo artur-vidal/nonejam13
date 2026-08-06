@@ -1,38 +1,44 @@
-// fundo do papel (retângulo branco)
-var _largura_papel = get_width()
-var _altura_papel = get_height()
+var w = get_width();
+var h = get_height();
 
+// fundo
 draw_set_color(#FFFFCD)
-draw_rectangle(x, y, x + _largura_papel, y + _altura_papel, false)
+draw_rectangle(x, y, x + w, y + h, false)
 
+// textual textilico
+var prev_font = draw_get_font()
+draw_set_color(#07070E)
 draw_set_font(fnt_paper)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 
-for (var i = 0; i < array_length(tokens); i++) {
-    var _tok = tokens[i]
-    var _draw_x = x + _tok.x
-    var _draw_y = y + _tok.y
-
-    if (_tok.recortavel && _tok.recortado) {
-        // riscado/apagado: cinza + linha por cima
-        draw_set_color(c_gray)
-        draw_text_transformed(_draw_x, _draw_y, _tok.texto, 0.7, 0.7, 0)
-        draw_line(_draw_x, _draw_y + _tok.altura / 2, _draw_x + _tok.largura, _draw_y + _tok.altura / 2)
-        draw_set_color(c_black)
-    } else if (_tok.recortavel) {
-        // recortável e ainda não recortada: pode destacar (ex: sublinhado sutil) pra dar affordance
-        draw_set_color(c_black)
-        draw_text_transformed(_draw_x, _draw_y, _tok.texto, 0.7, 0.7, 0)
-        // opcional: linha pontilhada ou cor diferente pra indicar "isso é clicável"
-    } else {
-        // texto normal, não recortável
-        draw_set_color(c_black)
-        draw_text_transformed(_draw_x, _draw_y, _tok.texto, 0.7, 0.7, 0)
+for (var i = 0; i < array_length(processed_blocks); i++) {
+    var block = processed_blocks[i]
+    
+    if (block.type == "headline") {
+        for (var j = 0; j < array_length(block.tokens); j++) {
+            var tok = block.tokens[j]
+            var _x = x + padding + tok.x
+            var _y = y + block.y_offset + tok.y
+            
+            if (tok.cuttable && tok.cut) {
+                // riscado/apagado
+                draw_set_color(c_gray)
+                draw_text_transformed(_x, _y, tok.text, text_scale, text_scale, 0)
+                draw_line(_x, _y + tok.height / 2, _x + tok.width, _y + tok.height / 2)
+                draw_set_color(#07070E)
+            } else {
+                draw_text_transformed(_x, _y, tok.text, text_scale, text_scale, 0)
+            }
+        }
+    } else if (block.type == "deco") {
+        if(i == 0) {
+            block.deco.draw_logo(x + padding, y + block.y_offset + 2)
+        } else {
+            // block.deco.draw(x + get_width() / 2 + padding * 2, y + block.y_offset - 8)
+        }
     }
 }
 
-// desenhando o sprite de lixeira
-draw_set_alpha(trash_alpha)
-draw_sprite(spr_trash, trashable && active && hovering_trash, x + get_width() + trash_gap, y)
-draw_set_alpha(1)
+draw_set_font(prev_font)
+draw_set_colour(c_white)

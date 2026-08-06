@@ -1,25 +1,17 @@
-if(all_tokens_cut() && active) {
-    trash()
+if(!active) exit;
+
+var _hover_result = hovering_any_token();
+
+if (_hover_result != hovering_token) {
+    set_cursor(_hover_result ? 1 : 0)
 }
 
-if(normal_tokens_cut() && !trashable && active) {
-    create_tween(id, "trash_alpha", 1, seconds(.5))
-        .ease(ANIMATION_EASINGS.OUT_CUBIC)
+hovering_token = _hover_result;
+
+if(active && all_tokens_cut()) {
+    create_tween(id, "y", room_height + 60, seconds(1.5))
+        .ease(ANIMATION_EASINGS.IN_BACK)
+        .on_complete(destroy)
     
-    trashable = true
+    active = false
 }
-
-var hovering_trash_now = point_in_rectangle(
-    mouse_x,
-    mouse_y,
-    x + get_width() + trash_gap,
-    y,
-    x + get_width() + trash_gap + sprite_get_width(spr_trash),
-    y + sprite_get_width(spr_trash)
-)
-
-if((trashable && active) && hovering_trash != hovering_trash_now) {
-    window_set_cursor(hovering_trash_now ? cr_handpoint : cr_default)
-}
-
-hovering_trash = hovering_trash_now

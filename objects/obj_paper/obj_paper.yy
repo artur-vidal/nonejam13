@@ -10,8 +10,8 @@
   "name":"obj_paper",
   "overriddenProperties":[],
   "parent":{
-    "name":"Papers",
-    "path":"folders/Objects/Papers.yy",
+    "name":"Gameplay",
+    "path":"folders/Objects/Gameplay.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -11,7 +11,7 @@ function tween_sequence() {
 /// @param {string} property Nome da propriedade a ser animada
 /// @param {any} from Valor inicial da animação
 /// @param {any} to Valor final da animação
-/// @param {int} duration Duração da animação em steps
+/// @param {real} duration Duração da animação em steps
 /// @returns {Struct.Tween}
 function create_tween(target, property, to, duration_steps) {
     var tween = new Tween(target, property, to, duration_steps)

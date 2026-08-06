@@ -1,36 +1,41 @@
-var clicking = mouse_check_button(mb_left)
-var papers = get_hovered_papers()
+if(!GAME.playing) exit;
 
-if(array_length(papers) > 0) {
+var clicking = mouse_check_button_pressed(mb_left)
+var holding = mouse_check_button(mb_left)
+
+var papers = get_hovered_papers()
+if (array_length(papers) > 0) {
     var top_paper = papers[0]
-    
-    // se não estiver arrastando nada
-    if !(dragging && dragging != top_paper) {
-        if(!hovering) {
+
+    if (!(dragging && dragging != top_paper)) {
+        if (!hovering) {
             top_paper.hover()
-            window_set_cursor(cr_size_all)
+            set_cursor(1)
             hovering = top_paper
-        } else {
-            if(clicking) {
+        } else if (!dragging) {
+            if (holding) {
                 top_paper.drag()
+                set_cursor(2)
                 dragging = top_paper
-            } else if(dragging) {
-                dragging.undrag()
-                dragging = noone
             }
+        } else if (!holding) {
+            drop(dragging)
         }
     }
-    
-    
 } else {
-    
-    if(hovering && !dragging) {
+    if (hovering && !dragging) {
         hovering.unhover()
-        window_set_cursor(cr_default)
+        set_cursor(0)
         hovering = noone
-    } else if(!clicking and dragging) {
-        dragging.undrag()
-        dragging = noone
+    } else if (!holding && dragging) {
+        drop(dragging)
     }
-    
 }
+
+area_rect_alpha = lerp(
+    area_rect_alpha, 
+    (!dragging || (dragging && mouse_in_area())) 
+        ? 0 
+        : 0.5, 
+    0.05
+)

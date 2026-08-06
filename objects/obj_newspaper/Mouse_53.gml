@@ -1,42 +1,9 @@
-if(!active) exit;
-
-var clicked_trash_button = trashable && hovering_trash
-
-if(clicked_trash_button) {
-    trash()
-}
-
-for (var i = 0; i < array_length(tokens); i++) {
-    var tok = tokens[i]
+if (hovering_token != undefined && !singleton(obj_paper_controller).hovering) {
+    var tok = hovering_token.token
+    var block = hovering_token.block
     
-    if (tok.recortavel && !tok.recortado) {
-        var tok_x1 = x + tok.x
-        var tok_y1 = y + tok.y
-        var tok_x2 = tok_x1 + tok.largura
-        var tok_y2 = tok_y1 + tok.altura
-        
-        var mouse_over = point_in_rectangle(
-            mouse_x,
-            mouse_y,
-            tok_x1,
-            tok_y1,
-            tok_x2,
-            tok_y2
-        )
-        
-        if (mouse_over) {
-            tok.recortado = true
-            
-            var papel = instance_create_depth(
-                mouse_x, 
-                mouse_y, 
-                0, 
-                obj_paper
-            )
-            
-            papel.content = tok.texto
-            
-            break // não preciso mais procurar
-        }
-    }
+    tok.cut = true
+    
+    var term = tok.headline_term.get_term()
+    create_paper(term, mouse_x, mouse_y)
 }
