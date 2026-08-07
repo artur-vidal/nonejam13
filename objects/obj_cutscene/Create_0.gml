@@ -21,6 +21,6 @@ scribble_color_set("c_azul", c_azul);
 text = 
 [
 ". . .", "[c_azul]Data[/c]: 03 de Novembro, 1983.", "[c_azul]Anúncio diário[/c]: As relações globais estão\nfragilizadas!\nPerigosos conflitos estão emergindo.", "[c_verm]A Grande Nação[/c] está trabalhando para\ngarantir sua posição de liderança.\nAdorada seja [c_verm]Angistânia[/c]!",
-"[c_azul]Data[/c]: 31 de Dezembro, 1983.", "[c_azul]Anúncio diário[/c]: Graças ao poderoso Führer Tavares,\no Governo da [c_verm]República Autoritária da Angistânia[/c]\nabre novas vagas, destinadas à Secretaria da\nVeracidade Nacional.", "Concorra e colabore para a glória\nda [c_verm]Grande Nação[/c].\nAdorada seja [c_verm]Angistânia[/c]!",
+"[c_azul]Data[/c]: 31 de Dezembro, 1983.", "[c_azul]Anúncio diário[/c]: Graças ao Ditador Gianno Angus,\no Governo da [c_verm]República Autoritária da Angistânia[/c]\nabre novas vagas, destinadas à Secretaria da\nVeracidade Nacional.", "Concorra e colabore para a glória\nda [c_verm]Grande Nação[/c].\nAdorada seja [c_verm]Angistânia[/c]!",
 "[c_azul]Data[/c]: 01 de Fevereiro, 1984.", "[c_azul]Anúncio diário[/c]: Parabéns! Você foi selecionado\npara a equipe da Secretaria de Veracidade Nacional.", "Seu trabalho é reescrever notícias comuns,\na fim de beneficiar a soberania da [c_verm]Grande Nação[/c]!", "[c_azul]Mas lembre-se[/c]: Seja convincente, o governo apenas\ngarante sua saúde e segurança\nenquanto trouxer resultados...\nAdorada seja [c_verm]Angistânia[/c]!"
 ]
