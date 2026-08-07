@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Mouse",
-    "path":"folders/Sprites/Mouse.yy",
+    "name":"Interface",
+    "path":"folders/Sprites/Interface.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
