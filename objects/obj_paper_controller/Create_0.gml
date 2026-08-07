@@ -9,10 +9,10 @@ depth = -500
 get_drag_area = function() {
     if(GAME.period == "day") {
         return {
-            x1: 10,
-            y1: 90,
-            x2: room_width - 148,
-            y2: room_height - 8
+            x1: 0,
+            y1: 96,
+            x2: 190,
+            y2: 180
         }
     } else if(GAME.period == "night") {
         return {
@@ -61,11 +61,13 @@ reset = function() {
 }
 
 hover_slot = function(_slot) {
-    hovering.hovering_slot = _slot
+    if(instance_exists(hovering)) {
+        hovering.hovering_slot = _slot
+    }
 }
 
 unhover_slot = function() {
-    if(hovering) {
+    if(instance_exists(hovering)) {
         hovering.hovering_slot = undefined
     }
 }
@@ -74,12 +76,14 @@ drop = function(paper) {
     var _drag_data = {
         paper: paper,
         accepted: false,
-        destroy: false
+        destroy: false,
+        force_go_back: false
     }
     
     ROOT.events.emit("paper-drop", _drag_data)
     
     if(_drag_data.destroy) {
+        reset()
         paper.poof_and_destroy()
     } else {
         var valid_pos = mouse_in_area() 
@@ -89,9 +93,12 @@ drop = function(paper) {
                 : true
             )
         
+        if(_drag_data.force_go_back) valid_pos = false;
+        
         paper.undrag(valid_pos)
         paper.go_back()
         dragging = noone
+        set_cursor(1)
     }
 }
 

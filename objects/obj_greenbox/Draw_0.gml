@@ -11,7 +11,7 @@ var max_terms = controller.max_terms()
 var term_count = controller.term_count()
 
 if(max_terms != infinity) {
-    draw_text(x, y + 32, $"{term_count} / {max_terms}")
+    draw_text_transformed(x, y + 32, $"{term_count} / {max_terms}", image_xscale, image_yscale, 0)
 }
 
 draw_set_font(_prev_font)

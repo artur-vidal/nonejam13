@@ -60,7 +60,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"NONEJAM13",
   "resources":[
@@ -77,6 +77,7 @@
     {"id":{"name":"obj_particles","path":"objects/obj_particles/obj_particles.yy",},},
     {"id":{"name":"obj_redbox","path":"objects/obj_redbox/obj_redbox.yy",},},
     {"id":{"name":"obj_sentence","path":"objects/obj_sentence/obj_sentence.yy",},},
+    {"id":{"name":"obj_undo_button","path":"objects/obj_undo_button/obj_undo_button.yy",},},
     {"id":{"name":"root","path":"objects/root/root.yy",},},
     {"id":{"name":"rm_day","path":"rooms/rm_day/rm_day.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},

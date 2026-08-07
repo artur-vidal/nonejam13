@@ -14,7 +14,7 @@ drop = function(data) {
     
     var game = GAME
     
-    game.add_term(paper.term)
+    game.add_term_to_box(paper.term)
     
     create_tween(id, "image_xscale", 1, ms(700))
         .ease(ANIMATION_EASINGS.OUT_BACK)

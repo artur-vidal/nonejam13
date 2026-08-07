@@ -24,7 +24,10 @@ if (array_length(papers) > 0) {
     }
 } else {
     if (hovering && !dragging) {
-        hovering.unhover()
+        // gambiarra inexplicavelmente funcional
+        if(instance_exists(hovering)) {
+            hovering.unhover()
+        }
         set_cursor(0)
         hovering = noone
     } else if (!holding && dragging) {
@@ -36,6 +39,6 @@ area_rect_alpha = lerp(
     area_rect_alpha, 
     (!dragging || (dragging && mouse_in_area())) 
         ? 0 
-        : 0.5, 
+        : 0.7, 
     0.05
 )

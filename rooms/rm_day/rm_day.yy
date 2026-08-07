@@ -10,6 +10,7 @@
     {"name":"inst_5D1C01ED","path":"rooms/rm_day/rm_day.yy",},
     {"name":"inst_7ECB0E2B","path":"rooms/rm_day/rm_day.yy",},
     {"name":"inst_523A1CF7","path":"rooms/rm_day/rm_day.yy",},
+    {"name":"inst_1604A46","path":"rooms/rm_day/rm_day.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -18,6 +19,7 @@
         {"$GMRInstance":"v4","%Name":"inst_32E60EA8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_32E60EA8","objectId":{"name":"obj_paper_controller","path":"objects/obj_paper_controller/obj_paper_controller.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
         {"$GMRInstance":"v4","%Name":"inst_7ECB0E2B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7ECB0E2B","objectId":{"name":"obj_greenbox","path":"objects/obj_greenbox/obj_greenbox.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":232.0,"y":136.0,},
         {"$GMRInstance":"v4","%Name":"inst_523A1CF7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_523A1CF7","objectId":{"name":"obj_redbox","path":"objects/obj_redbox/obj_redbox.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":280.0,"y":136.0,},
+        {"$GMRInstance":"v4","%Name":"inst_1604A46","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1604A46","objectId":{"name":"obj_undo_button","path":"objects/obj_undo_button/obj_undo_button.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":302.0,"y":98.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Sprites","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_6BD94B3E","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_6BD94B3E","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_fundo_caixas","path":"sprites/spr_fundo_caixas/spr_fundo_caixas.yy",},"x":192.0,"y":98.0,},

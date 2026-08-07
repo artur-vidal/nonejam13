@@ -19,7 +19,7 @@ sprite = new Sprite(spr_paper)
 width = 0
 height = 0
 padding = 2
-mask_padding = 4
+mask_margin = 2
 
 base_scale = 0.55
 scale = base_scale
@@ -29,6 +29,9 @@ scale_decrement_max = 0.1
 xto = x
 yto = y
 spd = 0
+
+collision_radius = 12
+collision_force = 8
 
 original_x = x
 original_y = y
@@ -76,10 +79,10 @@ is_hovered = function() {
     return point_in_rectangle(
         mouse_x, 
         mouse_y, 
-        x - width / 2 - mask_padding, 
-        y - height / 2 - mask_padding, 
-        x + width / 2 + mask_padding, 
-        y + height / 2 + mask_padding
+        x - width / 2 - mask_margin, 
+        y - height / 2 - mask_margin, 
+        x + width / 2 + mask_margin, 
+        y + height / 2 + mask_margin
     )
 }
 

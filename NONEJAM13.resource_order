@@ -49,6 +49,7 @@
     {"name":"obj_paper_controller","order":2,"path":"objects/obj_paper_controller/obj_paper_controller.yy",},
     {"name":"obj_paper","order":3,"path":"objects/obj_paper/obj_paper.yy",},
     {"name":"obj_redbox","order":3,"path":"objects/obj_redbox/obj_redbox.yy",},
+    {"name":"obj_undo_button","order":6,"path":"objects/obj_undo_button/obj_undo_button.yy",},
     {"name":"root","order":6,"path":"objects/root/root.yy",},
     {"name":"rm_init","order":1,"path":"rooms/rm_init/rm_init.yy",},
     {"name":"rm_night","order":2,"path":"rooms/rm_night/rm_night.yy",},

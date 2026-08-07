@@ -1,3 +1,5 @@
 ROOT.events.disconnect("greenbox-drop", add_term_to_box)
 ROOT.events.disconnect("redbox-drop", remove_term_to_box)
+ROOT.events.disconnect("paper-undo", retrieve_last_box_term)
+ROOT.events.disconnect("paper-drop-slot", add_term_to_slot)
 ROOT.events.disconnect("next-news", next_news)

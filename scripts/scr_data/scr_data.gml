@@ -203,7 +203,6 @@ function Sentence(_blocks, _modifiers = new NewsModifiers()) constructor {
 /// @param {string} _content
 function SentenceBlock(_content) constructor {
     content = _content
-    term = undefined
     
     has_content = function() {
         return self.content != ""
@@ -229,6 +228,23 @@ function SentenceBlock(_content) constructor {
 /// @param {Enum.TermTypes} _type
 function SentenceSlot(_type) : SentenceBlock("") constructor {
     type = _type
+    term = undefined
+    
+    set_term = function(term) {
+        self.term = term
+        self.content = term.content
+    }
+    
+    pop_term = function(term, take_content = true) {
+        if(take_content) {
+            self.content = ""
+        }
+        
+        var term_ref = self.term
+        self.term = undefined
+        
+        return term_ref
+    }
 }
 
 /// @param {real} id

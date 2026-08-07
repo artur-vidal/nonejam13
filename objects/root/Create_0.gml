@@ -7,7 +7,7 @@ particle_system = singleton(obj_particles)
 cursor = singleton(obj_cursor)
 
 application_surface_draw_enable(false)
-show_debug_overlay(false)
+show_debug_overlay(true)
 
 state = {
     // status gerais
@@ -27,7 +27,7 @@ state = {
     ],
     get_upgrade_effect: function(upgrade_id) {
         var up_level = self.upgrade_levels[upgrade_id]
-        var upgrade = get_Upgrades(upgrade_id)
+        var upgrade = get_upgrades(upgrade_id)
         return (up_level > 1) ? upgrade.effect[up_level - 1] : upgrade.zero
     }
 }

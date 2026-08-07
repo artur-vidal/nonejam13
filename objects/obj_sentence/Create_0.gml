@@ -2,28 +2,28 @@ sentence = undefined
 processed_blocks = []
 slot_hovered = undefined
 
-width = 90
+width = 80
 content_height = 0
 
 line_h = 14
 space_width = 4
 padding = 8
+stat_view_height = 60
 
-text_scale = 0.7
+text_scale = 0.65
+
+remove_frame = true // gambiarra
 
 get_width = function() {
     return width + padding * 2
 }
 
 get_height = function() {
-    return content_height + padding
+    // return content_height + padding // altura dinamica
+    return room_height // altura fixa
 }
 
 hovering_any_slot = function() {
-    if(!singleton(obj_paper_controller).dragging) {
-        return undefined
-    }
-    
     for (var i = 0; i < array_length(processed_blocks); i++) {
     	var block = processed_blocks[i]
         
@@ -53,7 +53,7 @@ build_layout = function() {
     draw_set_font(fnt_paper)
     
     var _x = padding
-    var _y = padding
+    var _y = padding + (stat_view_height) // espaço dos stats
     
     for (var i = 0; i < array_length(sentence.blocks); i++) {
         var block = sentence.blocks[i]
@@ -86,7 +86,7 @@ init = function(_sentence) {
 }
 
 drop = function(data) {
-    if(data.destroy) {
+    if(data.destroy || data.accepted) {
         return
     }
     
@@ -95,16 +95,25 @@ drop = function(data) {
         return
     }
     
-    if(slot.block.type != data.paper.term.type) {
+    if (slot.block.type != data.paper.term.type) {
         data.accepted = true
+        ROOT.events.emit("paper-unhover-slot", data.paper.term, slot)
+        data.force_go_back = true
         return
     }
     
-    ROOT.events.emit("paper-drop-slot", data.paper.term, slot)
-    build_layout()
+    if(slot.block.has_content()) {
+        data.accepted = true
+        data.force_go_back = true
+        return
+    }
     
     data.accepted = true
     data.destroy = true
+    
+    ROOT.events.emit("paper-drop-slot", data.paper.term, slot)
+    build_layout()
+    remove_frame = false
 }
 
 ROOT.events.connect("paper-drop", drop)

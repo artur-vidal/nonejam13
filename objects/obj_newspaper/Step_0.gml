@@ -2,7 +2,7 @@ if(!active) exit;
 
 var _hover_result = hovering_any_token();
 
-if (_hover_result != hovering_token) {
+if (_hover_result != hovering_token && !singleton(obj_paper_controller).dragging) {
     set_cursor(_hover_result ? 1 : 0)
 }
 

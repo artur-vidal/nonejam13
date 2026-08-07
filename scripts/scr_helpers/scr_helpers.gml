@@ -58,7 +58,7 @@ function set_term_type_colour(type) {
            draw_set_colour(#FFA0A0)
            break
    	case TermTypes.LOCATION:
-           draw_set_colour(#A0FFA0)
+           draw_set_colour(#80DD70)
            break
    	case TermTypes.OBJECT:
            draw_set_colour(#A0A0FF)

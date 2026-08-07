@@ -3,7 +3,7 @@ hovering_token = undefined
 space_width = 2
 line_h = 8
 padding = 10
-block_gap = 4
+block_gap = 8
 max_width = 60 + padding * 2
 text_scale = 0.7
 

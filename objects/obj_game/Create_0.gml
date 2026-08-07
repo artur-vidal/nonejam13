@@ -81,12 +81,12 @@ next_news = function() {
 
 ROOT.events.connect("greenbox-drop", add_term_to_box)
 ROOT.events.connect("redbox-drop", remove_term_to_box)
+ROOT.events.connect("paper-undo", retrieve_last_box_term)
 ROOT.events.connect("next-news", next_news)
 
 // NOITE NOITE NIOTE NOITE
 add_term_to_slot = function(term, slot) {
-    slot.block.term = term
-    slot.block.content = term.content
+    slot.block.set_term(term)
 }
 
 ROOT.events.connect("paper-drop-slot", add_term_to_slot)
@@ -105,7 +105,18 @@ resume = function() {
 to_night = function() {
     period = "night"
     ended_period = false
+    ROOT.particle_system.poof(-100, -100) // limpa particulas
+    singleton(obj_paper_controller).reset() 
     room_goto(rm_night)
+    
+    var carry_terms = function() {
+        var added_terms = get_boxed_terms()
+        for (var i = 0; i < array_length(added_terms); i++) {
+        	var term = added_terms[i].term
+            create_paper(term, room_width / 5, room_height / 2, false)
+        }
+    }
+    call_later(1, time_source_units_frames, carry_terms)
 }
 
 // inicialização
@@ -113,8 +124,8 @@ if(period == "day") {
     next_news()
 } else if(period == "night") {
     var i = 0
-    repeat(2) {
-        var sentence = instance_create_depth(room_width - 110 - i * 120, 30, 0, obj_sentence)
+    repeat(1) {
+        var sentence = instance_create_depth(room_width - 110 - i * 120, 20, 0, obj_sentence)
         sentence.init(i)
         i++
     }

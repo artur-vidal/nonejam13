@@ -1,5 +1,8 @@
-draw_set_colour(#FFFFD9)
+draw_set_colour(#FFFFFD)
 draw_rectangle(x, y, x + get_width(), y + get_height(), false)
+
+draw_set_colour(#408B90)
+draw_rectangle(x, y, x + get_width(), y + stat_view_height, false)
 
 var prev_font = draw_get_font()
 draw_set_font(fnt_paper)
