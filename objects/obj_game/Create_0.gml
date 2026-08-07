@@ -1,10 +1,24 @@
+if(instance_number(obj_game) > 1) {
+    instance_destroy(id)
+    exit
+}
+
 // period = "day" - MOVIDO PARA VARIABLE DEFINITIONS
 ended_period = false
 playing = true
 
 // DIA DIA DIA DIA DIA
 newspaper_index = -1
-today_news = [0, 1]
+day_news = [
+    [0, 1],
+    [2, 3],
+    [4, 5],
+    [6, 7],
+    [8, 9],
+    [10, 11, 12],
+]
+
+today_news = day_news[ROOT.state.day - 1]
 
 boxed_terms = []
 
@@ -121,12 +135,13 @@ to_night = function() {
 
 // inicialização
 if(period == "day") {
+    singleton(obj_paper_controller)
     next_news()
 } else if(period == "night") {
-    var i = 0
-    repeat(1) {
-        var sentence = instance_create_depth(room_width - 110 - i * 120, 20, 0, obj_sentence)
-        sentence.init(i)
-        i++
+    singleton(obj_paper_controller)
+    repeat(10) {
+        create_paper(get_terms(choose(1, 15, 33)), 50, 90)
     }
+    var sentence = instance_create_depth(room_width - 110, 20, 0, obj_sentence)
+    sentence.init()
 }

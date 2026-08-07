@@ -27,10 +27,16 @@ draw_roundrect_ext(
 )
 
 if(GAME.period == "day") {
-    var greenbox = singleton(obj_greenbox)
-    var redbox = singleton(obj_redbox)
-    draw_sprite(spr_caixa, 0, greenbox.x, greenbox.y)
-    draw_sprite(spr_triturador, 0, redbox.x, redbox.y)
+    // abrindo mais um espaço na area das caixas ali
+    draw_roundrect_ext(
+        192, 
+        96, 
+        room_width,
+        room_height, 
+        8, 
+        8, 
+        false
+    )
 }
 
 gpu_set_blendmode(_old_blend)
