@@ -256,17 +256,18 @@ function get_terms(id = undefined) {
         new Term(3, "Taquistão", TermTypes.LOCATION, new NewsModifiers(2, -1, -1.5, 2, 0, 1), ["Angistânia", "Guerra", "Fronteira"]),
         new Term(4, "Rep. Abacates", TermTypes.LOCATION, new NewsModifiers(0, 0, 1, 1, 0, 0), ["Rep. Abacates", "Paz"]),
         new Term(5, "Cadeia", TermTypes.LOCATION, new NewsModifiers(0, 0.5, 0.5, 0, 0, 1), ["Cotidiano", "Crime"]),
-        new Term(6, "Casa", TermTypes.LOCATION, new NewsModifiers(0, 0, 0.25, 0, 0, 0), ["Cotidiano"]),
+        new Term(38, "Canal 5", TermTypes.LOCATION, new NewsModifiers(1.0, 1.5, 1.5, 1, 1, 1), ["Cotidiano"]),
         new Term(7, "Motel", TermTypes.LOCATION, new NewsModifiers(0.25, 0, 1, 0, 0, 1), ["Cotidiano", "Romance"]),
-        new Term(8, "Rua", TermTypes.LOCATION, new NewsModifiers(0, 0, 0.5, 0, 0, 0), ["Cotidiano"]),
+        new Term(8, "Parque", TermTypes.LOCATION, new NewsModifiers(0, 0, 0.5, 0, 0, 0), ["Cotidiano"]),
         new Term(29, "Fronteiras", TermTypes.LOCATION, new NewsModifiers(0.5, 0, 0, 1, 0, 1), ["Guerra", "Fronteira"]),
         new Term(9, "Jato particular", TermTypes.LOCATION, new NewsModifiers(0.5, 0, 1, 2, 0, 1), ["Dinheiro"]),
         new Term(10, "Sir Plemin XVI", TermTypes.SUBJECT, new NewsModifiers(0, 1, 0, 1, 1, 0), ["Angistânia", "Guerra", "Pleméria", "Taquistão"]),
-        new Term(11, "Giarno Angus", TermTypes.SUBJECT, new NewsModifiers(1.5, 3, 0, 1, 1, 1), ["Angistânia", "Guerra", "Taquistão"]),
+        new Term(11, "Gianno Angus", TermTypes.SUBJECT, new NewsModifiers(1.5, 3, 0, 1, 1, 1), ["Angistânia", "Guerra", "Taquistão"]),
         new Term(12, "Takalo Amali", TermTypes.SUBJECT, new NewsModifiers(2, -2, 0, 1, 1, 1), ["Angistânia", "Guerra"]),
-        new Term(13, "João Pedro 52º", TermTypes.SUBJECT, new NewsModifiers(0, 0, 2, 0.5, 1, 0), ["Rep. Abacates", "Paz"]),
-        new Term(14, "Kanye East", TermTypes.SUBJECT, new NewsModifiers(1, -1, 2, 1, 1, 1), ["Taquistão", "Música"]),
+        new Term(13, "João Pedro Jr. Jr.", TermTypes.SUBJECT, new NewsModifiers(0, 0, 2, 0.5, 1, 0), ["Rep. Abacates", "Paz"]),
+        new Term(14, "Keine East", TermTypes.SUBJECT, new NewsModifiers(1, -1, 2, 1, 1, 1), ["Taquistão", "Música"]),
         new Term(15, "Lakira", TermTypes.SUBJECT, new NewsModifiers(0, 2, 1.5, 1, 1, 0), ["Angistânia", "Música", "Paz", "Heraldo", "Lakira"]),
+        new Term(37, "Chico Duarte", TermTypes.SUBJECT, new NewsModifiers(-1, 1.5, 0, 1, 1, 1), ["Angistânia", "Música", "Paz", "Heraldo", "Lakira"]),
         new Term(16, "Heraldo", TermTypes.SUBJECT, new NewsModifiers(0.5, 2, 1.5, 0.5, 1, 1), ["Angistânia", "Esporte", "Lakira", "Heraldo"]),
         new Term(17, "Richelon", TermTypes.SUBJECT, new NewsModifiers(1, -1, 1.5, 0.5, 1, 0), ["Taquistão", "Esporte"]),
         new Term(18, "Idoso", TermTypes.SUBJECT, new NewsModifiers(-0.5, 0, 0.5, 0, 0, 0), ["Cotidiano"]),
@@ -280,11 +281,10 @@ function get_terms(id = undefined) {
         new Term(26, "Faca", TermTypes.OBJECT, new NewsModifiers(0.5, -0.25, 0, 0, 0, 0), ["Cotidiano", "Crime"]),
         new Term(27, "Pedra", TermTypes.OBJECT, new NewsModifiers(0, 0, 0.25, 0, 0, 0), ["Cotidiano"]),
         new Term(28, "Bandeira Nacional", TermTypes.OBJECT, new NewsModifiers(1, 1.5, -0.5, 1, 0, 1), ["Angistânia", "Guerra"]),
-        new Term(30, "Joias", TermTypes.OBJECT, new NewsModifiers(0, 0, 1, 1.5, 0, 0), ["Cotidiano", "Dinheiro"]),
         new Term(31, "Banana", TermTypes.OBJECT, new NewsModifiers(0, 0, 1, -1, 0, 0), ["Cotidiano", "Rep. Abacates"]),
         new Term(32, "Colar da Amizade", TermTypes.OBJECT, new NewsModifiers(-1, 0, 1.5, 0, 0, 0), ["Cotidiano", "Paz"]),
         new Term(33, "Flores", TermTypes.OBJECT, new NewsModifiers(-0.5, 0, 0.5, 0, 0, 0), ["Cotidiano", "Paz", "Romance"]),
-        new Term(34, "Bandeira Taquistana", TermTypes.OBJECT, new NewsModifiers(1.5, -2.0, -0.5, 1, 0, 1), ["Taquistão", "Guerra"]),
+        new Term(34, "Bandeira Taquistã", TermTypes.OBJECT, new NewsModifiers(1.5, -2.0, -0.5, 1, 0, 1), ["Taquistão", "Guerra"]),
         new Term(35, "Arma", TermTypes.OBJECT, new NewsModifiers(1.5, -1, -0.5, 0, 0, 1), ["Crime"]),
         new Term(36, "Perfume", TermTypes.OBJECT, new NewsModifiers(0, 0, 1, 0.5, 0, 0), ["Cotidiano", "Romance"]),
     ]
@@ -305,28 +305,157 @@ function get_terms(id = undefined) {
 /// @returns {Array<Struct.Newspaper>}
 function get_newspaper(num) {
     static _newspapers = [
+        // DIA 1 (0, 1)
         new Newspaper([
             new NewspaperDeco(),
-            new Headline("Bandido rouba idoso no meio da rua", [
-                new HeadlineTerm(20),
-                new HeadlineTerm(18),
-                new HeadlineTerm(8)
+            new Headline("Fronteiras fechadas entre Angistânia e Taquistão", [
+                new HeadlineTerm(29),
+                new HeadlineTerm(1),
+                new HeadlineTerm(3),
             ]),
-            new Headline("Bandeira Nacional colocada em chamas em cidade no Taquistão", [
+            new Headline("Lakira lança novo álbum \"Serviço de Lavanderia\"", [
+                new HeadlineTerm(15),
+            ])
+        ]),
+        new Newspaper([
+            new Headline("Canal 5 exalta Bandeira Nacional em transmissão", [
+                new HeadlineTerm(38),
                 new HeadlineTerm(28),
-                new HeadlineTerm(3)
+            ]),
+        ]),
+        
+        // DIA 2 (2, 3)
+        new Newspaper([
+            new NewspaperDeco(),
+            new Headline("Pleméria envia suprimentos ao país", [
+                new HeadlineTerm(2),
+            ]),
+            new Headline("Bandido levado à cadeia por contrabando de pedra", [
+                new HeadlineTerm(20),
+                new HeadlineTerm(5),
+                new HeadlineTerm(27),
+            ])
+        ]),
+        new Newspaper([
+            new Headline("Criança aponta ausência de flores nas cidades", [
+                new HeadlineTerm(19),
+                new HeadlineTerm(33),
+            ]),
+            new Headline("O Ditador Gianno Angus fecha tratado com João Pedro Jr. Jr.", [
+                new HeadlineTerm(11),
+                new HeadlineTerm(13),
+            ]),
+        ]),
+        
+        // DIA 3 (4, 5)
+        new Newspaper([
+            new NewspaperDeco(),
+            new Headline("Rep. Abacates recebe refugiados angistanos", [
+                new HeadlineTerm(4),
+            ]),
+            new Headline("Heraldo, parceiro de Lakira, visto escorregando em banana dentro de parque", [
+                new HeadlineTerm(16),
+                new HeadlineTerm(15),
+                new HeadlineTerm(31),
+                new HeadlineTerm(8),
+            ])
+        ]),
+        new Newspaper([
+            new Headline("Empresária começa nova linha de perfume", [
+                new HeadlineTerm(21),
+                new HeadlineTerm(36),
+            ]),
+            new Headline("Atleta viaja em jato particular com Takalo Amali", [
+                new HeadlineTerm(24),
+                new HeadlineTerm(9),
+                new HeadlineTerm(12),
+            ]),
+        ]),
+        
+        // DIA 4 (6, 7)
+        new Newspaper([
+            new NewspaperDeco(),
+            new Headline("Jogador Richelon visto em motel", [
+                new HeadlineTerm(17),
+                new HeadlineTerm(7),
+            ]),
+            new Headline("Ativista da paz oferece abacate em parque", [
+                new HeadlineTerm(22),
+                new HeadlineTerm(23),
+                new HeadlineTerm(8), 
+            ]), 
+            new Headline("Keine East insulta Chico Duarte no Canal 5", [
+                new HeadlineTerm(14),
+                new HeadlineTerm(37),
+                new HeadlineTerm(38),
+            ]),
+        ]),
+        new Newspaper([
+            new NewspaperDeco(),
+            new Headline("O Ditador Gianno Angus, durante palestra, foi atacado por sujeito taqustão carregando arma!", [
+                new HeadlineTerm(11),
+                new HeadlineTerm(35),
+            ]),
+            new Headline("Bandeira Taquistã queimada em cadeia!", [
+                new HeadlineTerm(34),
+                new HeadlineTerm(5),
+            ]),
+        ]),
+        
+        // DIA 5 (8, 9)
+        new Newspaper([
+            new NewspaperDeco(),
+            new Headline("Criança divide colar da amizade em fronteiras", [
+                new HeadlineTerm(19),
+                new HeadlineTerm(32),
+                new HeadlineTerm(29),
+            ]),
+            new Headline("Angistânia consegue apoio militar de nações intercontinentais", [
+                new HeadlineTerm(1),
+            ])
+        ]),
+        new Newspaper([
+            new Headline("Sir Plemin XVI organiza ataque ao Taquistão", [
+                new HeadlineTerm(10),
+                new HeadlineTerm(3),
+            ]),
+            new Headline("Chico Duarte responde a críticas com nova música", [
+                new HeadlineTerm(37),
+            ]),
+            new Headline("Rep. Abacates declara amizade à todos os envolvidos no conflito", [
+                new HeadlineTerm(4),
+            ]),
+        ]),
+        
+        // DIA 6 (10, 11, 12)
+        new Newspaper([
+            new NewspaperDeco(),
+            new Headline("Lakira descrobre traição de Heraldo com Richelon!", [
+                new HeadlineTerm(15),
+                new HeadlineTerm(16),
+                new HeadlineTerm(17),
+            ]),
+            new Headline("Empresária e Atleta famosos viajam para Pleméria frente à crescimento dos conflitos", [
+                new HeadlineTerm(21),
+                new HeadlineTerm(24),
+                new HeadlineTerm(2),
+            ]),
+        ]),
+        new Newspaper([
+            new Headline("João Pedro Jr. Jr. diz: \"Tremendamente desolado pela violência nesses tempos. Por favor, comam mais abacate.\"", [
+                new HeadlineTerm(13),
+                new HeadlineTerm(23),
             ])
         ]),
         new Newspaper([
             new NewspaperDeco(),
-            new Headline("Giarno Angus faz resenha com Sir Plemin XVI", [
-                new HeadlineTerm(11),
-                new HeadlineTerm(10)
+            new Headline("Rumores apontam que Takalo Amali pode começar a ceder frente à numerosa pressão externa", [
+                new HeadlineTerm(12),
             ]),
-            new Headline("Preço do abacate desce muito!", [
-                new HeadlineTerm(23)
+            new Headline("Adorada seja Angistânia.", [
+                new HeadlineTerm(1),
             ])
-        ]),
+        ])
     ]
     
     return _newspapers[num]
@@ -337,16 +466,208 @@ function get_newspaper(num) {
 function get_sentence(index) {
     static _sentences = [
         new Sentence([
-            new SentenceSlot(TermTypes.OBJECT),
-            new SentenceBlock("roubado em"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("faz declaração polêmica em"),
             new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("critica o uso abusivo de"),
+            new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("por"),
             new SentenceSlot(TermTypes.SUBJECT),
         ]),
         new Sentence([
+            new SentenceSlot("Autoridades nacionais proíbem o uso de"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("em espaços públicos"),
+        ]),
+        new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
-            new SentenceBlock("se casa com"),
+            new SentenceBlock("e"),
             new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock(", segundo cartomantes, são poderosos quando acompanhados"),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("anuncia fechamento de"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("oferece"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("gratuito."),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("faz palestra pública e critica governo"),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("e"),
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("celebram o dia nacional de"),
+            new SentenceSlot(TermTypes.OBJECT),
+        ]),
+        new Sentence([
+            new SentenceBlock("Queima de estoque de"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("em"),
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("!"),
+        ]),
+        new Sentence([
+            new SentenceBlock("Grupo compartilha"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("e"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("em"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("ataca"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("com"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("em"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("roubado por"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("em"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("faz declaração polêmica em"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock(", em parceria com"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock(", faz doações de"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("para todos."),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("denunciado por perturbar"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("em"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("termina viagem de três meses em"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock(", na verdade, é um ótimo utensílio culinário!"),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("descobre novo elemento com fusão entre"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("e"),
+            new SentenceSlot(TermTypes.OBJECT),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("e"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("fazem performance artística em"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("avista"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("roubando"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("e rouba o criminoso durante o ato!"),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("e"),
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("fecham parceria e inexplicavelmente vão à falência em poucas horas."),
+        ]),
+        new Sentence([
+            new SentenceBlock("Instituiçã descobre que"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("e"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock(", juntos, podem criar bombas atômicas."),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("presenteia"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("com"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("estragado..."),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("encontra fóssil jurássico em exploração individual."),
+        ]),
+        new Sentence([
+            new SentenceBlock("Autoridades encontram quantidades exorbitantes de"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("em espaço público!"),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("e"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("lideram manifestação em"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceBlock("Empresa fecha após descobrir que"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("desviara dinheiro para"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("persegue"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("até esse puxar"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("de repente!"),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("encontrado em"),
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("e"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("secretamente o troca por"),
+            new SentenceSlot(TermTypes.OBJECT),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("desaparece, mas cópia quase idêntica criada por"),
+            new SentenceSlot(TermTypes.SUBJECT),
+            new SentenceBlock("usando"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("é encontrada em"),
+            new SentenceSlot(TermTypes.LOCATION),
+        ]),
+        new Sentence([
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("e"),
+            new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock("encontrados dentro de Railux."),
         ]),
     ]
     

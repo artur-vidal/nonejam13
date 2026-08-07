@@ -24,7 +24,7 @@ for (var i = 0; i < array_length(processed_blocks); i++) {
             draw_rectangle_thick(block.gx, block.gy, block.gx + block.width, block.gy + block.height, thickness)
         }
     } else {
-        draw_text_transformed(block.gx, block.gy, block.block.content, text_scale, text_scale, 0)
+        draw_text_transformed(block.gx, block.gy, block.text, text_scale, text_scale, 0)
     }
 }
 

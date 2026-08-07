@@ -15,6 +15,8 @@ state = {
     confidence: 60,
     seriousness: 80,
     
+    day: 1,
+    
     // Upgrades
     upgrade_points: 0,
     upgrade_levels: [

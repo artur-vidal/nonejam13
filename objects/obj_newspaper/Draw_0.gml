@@ -2,7 +2,7 @@ var w = get_width();
 var h = get_height();
 
 // fundo
-draw_set_color(#FFFFCD)
+draw_set_color(#FFFFFD)
 draw_rectangle(x, y, x + w, y + h, false)
 
 // textual textilico
@@ -33,6 +33,7 @@ for (var i = 0; i < array_length(processed_blocks); i++) {
         }
     } else if (block.type == "deco") {
         if(i == 0) {
+            // draw_rectangle_colour(x, y, x + get_width(), y + padding + block.y_offset + 16, #408B90, #408B90, #408B90, #408B90, false)
             block.deco.draw_logo(x + padding, y + block.y_offset + 2)
         } else {
             // block.deco.draw(x + get_width() / 2 + padding * 2, y + block.y_offset - 8)
