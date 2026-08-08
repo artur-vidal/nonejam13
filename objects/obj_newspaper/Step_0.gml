@@ -1,4 +1,4 @@
-if(!active) exit;
+if(!active || !GAME.playing) exit;
 
 var _hover_result = hovering_any_token();
 

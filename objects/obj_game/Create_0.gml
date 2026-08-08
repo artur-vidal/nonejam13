@@ -6,6 +6,7 @@ if(instance_number(obj_game) > 1) {
 // period = "day" - MOVIDO PARA VARIABLE DEFINITIONS
 ended_period = false
 playing = true
+pause_surface = surface_create(room_width, room_height)
 
 // DIA DIA DIA DIA DIA
 newspaper_index = -1
@@ -123,14 +124,24 @@ to_night = function() {
     singleton(obj_paper_controller).reset() 
     room_goto(rm_night)
     
-    var carry_terms = function() {
+    var night_initialization = function() {
         var added_terms = get_boxed_terms()
         for (var i = 0; i < array_length(added_terms); i++) {
         	var term = added_terms[i].term
             create_paper(term, room_width / 5, room_height / 2, false)
         }
+        
+        
+        var x1 = room_width - 100
+        var x2 = x1 - 100 - 10
+        
+        instance_create_depth(x1, 0, 0, obj_sentence)
+        if(ROOT.state.day >= 4) {
+            instance_create_depth(x2, 0, 0, obj_sentence)
+        }
     }
-    call_later(1, time_source_units_frames, carry_terms)
+    
+    call_later(1, time_source_units_frames, night_initialization)
 }
 
 // inicialização
@@ -140,8 +151,10 @@ if(period == "day") {
 } else if(period == "night") {
     singleton(obj_paper_controller)
     repeat(10) {
-        create_paper(get_terms(choose(1, 15, 33)), 50, 90)
+        create_paper(get_terms(choose(1, 15, 33)), 50, 90, false)
     }
     var sentence = instance_create_depth(room_width - 110, 20, 0, obj_sentence)
     sentence.init()
 }
+
+depth = -500

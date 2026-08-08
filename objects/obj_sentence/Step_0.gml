@@ -1,6 +1,20 @@
 var hovered_slot_now = hovering_any_slot()
 var dragging_paper = singleton(obj_paper_controller).dragging
 
+if(submitted || !GAME.playing) {
+    exit
+}
+
+if(mouse_check_button_released(mb_left)) {
+    if(hovering_left_arrow()) {
+        prev_sentence()
+        audio_play_sound(snd_bump, 0, 0)
+    } else if(hovering_right_arrow()) {
+        next_sentence()
+        audio_play_sound(snd_bump, 0, 0)
+    }
+}
+
 if(hovered_slot_now != slot_hovered) {
     // entrou
     if(
@@ -35,5 +49,22 @@ if(hovered_slot_now) {
     }
 }
 
+// carimbo
+var hovering_stamp_now = is_hovering_stamp()
+if(hovering_stamp_now != hovering_stamp) {
+    if(hovering_stamp_now) {
+        set_cursor(1)
+    } else {
+        set_cursor(0)
+    }
+}
+
+if(hovering_stamp_now && stampable() && mouse_check_button_released(mb_left)) {
+    submitted = true
+    set_cursor(0)
+    ROOT.particle_system.poof(mouse_x, mouse_y)
+}
+
+hovering_stamp = hovering_stamp_now
 slot_hovered = hovered_slot_now
 remove_frame = true

@@ -212,7 +212,7 @@ function SentenceBlock(_content) constructor {
         if(self.has_content()) {
             return string_width(self.content) * scale
         } else {
-            return 36 * scale
+            return 40 * scale
         }
     }
     
@@ -220,7 +220,7 @@ function SentenceBlock(_content) constructor {
         if(self.has_content()) {
             return string_height(self.content) * scale
         } else {
-            return 12 * scale
+            return 14 * scale
         }
     }
 }
@@ -469,64 +469,66 @@ function get_sentence(index) {
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("faz declaração polêmica em"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(0.5, 1, 0.5, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("critica o uso abusivo de"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("por"),
             new SentenceSlot(TermTypes.SUBJECT),
-        ]),
+        ], new NewsModifiers(0.5, 1, 0.0, 0.0)),
         new Sentence([
-            new SentenceSlot("Autoridades nacionais proíbem o uso de"),
+            new SentenceBlock("Autoridades nacionais proíbem o uso de"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("em espaços públicos"),
-        ]),
+        ], new NewsModifiers(1.0, 1, -1.0, 0.5)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("e"),
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock(", segundo cartomantes, são poderosos quando acompanhados"),
-        ]),
+        ], new NewsModifiers(0.0, 1, 1.0, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.LOCATION),
             new SentenceBlock("anuncia fechamento de"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(0.5, -1, 0.0, 1.0)),
         new Sentence([
             new SentenceSlot(TermTypes.LOCATION),
             new SentenceBlock("oferece"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("gratuito."),
-        ]),
+        ], new NewsModifiers(-0.5, 1, 0.0, -1.0)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("faz palestra pública e critica governo"),
-        ]),
+        ], new NewsModifiers(0.5, 1, -1.0, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock(","),
             new SentenceSlot(TermTypes.LOCATION),
             new SentenceBlock("e"),
             new SentenceSlot(TermTypes.LOCATION),
             new SentenceBlock("celebram o dia nacional de"),
             new SentenceSlot(TermTypes.OBJECT),
-        ]),
+        ], new NewsModifiers(0.0, 1, 0.5, 0.5)),
         new Sentence([
             new SentenceBlock("Queima de estoque de"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("em"),
             new SentenceSlot(TermTypes.LOCATION),
             new SentenceBlock("!"),
-        ]),
+        ], new NewsModifiers(-1.0, 1, 1.5, -1.5)),
         new Sentence([
             new SentenceBlock("Grupo compartilha"),
             new SentenceSlot(TermTypes.OBJECT),
+            new SentenceBlock(","),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("e"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("em"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(0.0, 1, 0.5, -1.0)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("ataca"),
@@ -535,19 +537,14 @@ function get_sentence(index) {
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("em"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(1.5, -1, 0.0, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("roubado por"),
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("em"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
-        new Sentence([
-            new SentenceSlot(TermTypes.SUBJECT),
-            new SentenceBlock("faz declaração polêmica em"),
-            new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(1.0, -1, 0.0, 0.5)),
         new Sentence([
             new SentenceSlot(TermTypes.LOCATION),
             new SentenceBlock(", em parceria com"),
@@ -555,37 +552,37 @@ function get_sentence(index) {
             new SentenceBlock(", faz doações de"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("para todos."),
-        ]),
+        ], new NewsModifiers(0.0, 1, 0.0, -1.0)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("denunciado por perturbar"),
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("em"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(0.5, -1, 0.0, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("termina viagem de três meses em"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(0.0, 1, 1.0, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock(", na verdade, é um ótimo utensílio culinário!"),
-        ]),
+        ], new NewsModifiers(-0.5, 1, 2.5, -0.5)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("descobre novo elemento com fusão entre"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("e"),
             new SentenceSlot(TermTypes.OBJECT),
-        ]),
+        ], new NewsModifiers(0.0, 1, 0.5, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("e"),
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("fazem performance artística em"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(0.0, 1, 0.5, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("avista"),
@@ -593,20 +590,20 @@ function get_sentence(index) {
             new SentenceBlock("roubando"),
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("e rouba o criminoso durante o ato!"),
-        ]),
+        ], new NewsModifiers(0.0, -1, 0.5, 0.5)),
         new Sentence([
             new SentenceSlot(TermTypes.LOCATION),
             new SentenceBlock("e"),
             new SentenceSlot(TermTypes.LOCATION),
             new SentenceBlock("fecham parceria e inexplicavelmente vão à falência em poucas horas."),
-        ]),
+        ], new NewsModifiers(0.0, -1, 1.0, 1.5)),
         new Sentence([
-            new SentenceBlock("Instituiçã descobre que"),
+            new SentenceBlock("Instituição descobre que"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("e"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock(", juntos, podem criar bombas atômicas."),
-        ]),
+        ], new NewsModifiers(0.0, 1, -0.5, 0.5)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("presenteia"),
@@ -614,29 +611,29 @@ function get_sentence(index) {
             new SentenceBlock("com"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("estragado..."),
-        ]),
+        ], new NewsModifiers(0.5, -1, 0.5, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("encontra fóssil jurássico em exploração individual."),
-        ]),
+        ], new NewsModifiers(0.0, 1, 1.0, 1.0)),
         new Sentence([
             new SentenceBlock("Autoridades encontram quantidades exorbitantes de"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("em espaço público!"),
-        ]),
+        ], new NewsModifiers(0.0, 1, 1.0, 0.5)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("e"),
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("lideram manifestação em"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(0.5, -1, -0.5, 0.0)),
         new Sentence([
             new SentenceBlock("Empresa fecha após descobrir que"),
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("desviara dinheiro para"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(0.5, 1, 0.0, 2.0)),
         new Sentence([
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("persegue"),
@@ -644,16 +641,16 @@ function get_sentence(index) {
             new SentenceBlock("até esse puxar"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("de repente!"),
-        ]),
+        ], new NewsModifiers(0.5, -1, 0.0, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("encontrado em"),
             new SentenceSlot(TermTypes.LOCATION),
-            new SentenceBlock("e"),
+            new SentenceBlock(", e"),
             new SentenceSlot(TermTypes.SUBJECT),
             new SentenceBlock("secretamente o troca por"),
             new SentenceSlot(TermTypes.OBJECT),
-        ]),
+        ], new NewsModifiers(0.0, 1, 1.0, 0.0)),
         new Sentence([
             new SentenceSlot(TermTypes.LOCATION),
             new SentenceBlock("desaparece, mas cópia quase idêntica criada por"),
@@ -662,13 +659,13 @@ function get_sentence(index) {
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("é encontrada em"),
             new SentenceSlot(TermTypes.LOCATION),
-        ]),
+        ], new NewsModifiers(0.0, 1, 1.5, 1.0)),
         new Sentence([
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("e"),
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("encontrados dentro de Railux."),
-        ]),
+        ], new NewsModifiers(0.0, 1, 2.0, 0.5)),
     ]
     
     return _sentences[index]
@@ -715,8 +712,8 @@ function get_upgrades(id = undefined) {
             name: "Vocabulário",
             description: "Aumenta a capacidade da caixa de termos para {0}.",
             flavor: "Nosso jornal também é aprendizado, sabe.",
-            effect: [4, 5, infinity],
-            zero: 3
+            effect: [5, 6, infinity],
+            zero: 4
         },
         {
             id: Upgrades.BOAIMAGEM,

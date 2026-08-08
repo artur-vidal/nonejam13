@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.0448979,
+  "duration":0.35802722,
   "exportDir":"",
   "name":"snd_paper_rip_1",
   "parent":{

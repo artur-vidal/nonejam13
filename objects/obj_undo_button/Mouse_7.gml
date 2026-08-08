@@ -1,2 +1,4 @@
 image_index = 1
-ROOT.events.emit("paper-undo")
+if(GAME.playing) {
+    ROOT.events.emit("paper-undo")
+}

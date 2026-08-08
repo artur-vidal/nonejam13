@@ -7,7 +7,7 @@ particle_system = singleton(obj_particles)
 cursor = singleton(obj_cursor)
 
 application_surface_draw_enable(false)
-show_debug_overlay(true)
+show_debug_overlay(false)
 
 state = {
     // status gerais

@@ -1,18 +1,33 @@
-sentence = get_sentence(instance_number(object_index) - 1)
+sentence_index = -1
+sentence = undefined
+
 processed_blocks = []
 slot_hovered = undefined
 
+room_y = 10
 width = 80
 content_height = 0
 
-line_h = 14
+line_h = 12
 space_width = 4
 padding = 8
 stat_view_height = 60
 
-text_scale = 0.65
+text_scale = 0.5
+
+// carimbo
+hovering_stamp = false
+stamp_scale = 0.75
+submitted = false
 
 remove_frame = true // gambiarra
+
+// setinhas
+arrow_x = 0
+arrow_y = 0
+arrow_gap = 4
+
+tween = undefined
 
 get_width = function() {
     return width + padding * 2
@@ -21,6 +36,32 @@ get_width = function() {
 get_height = function() {
     // return content_height + padding // altura dinamica
     return room_height // altura fixa
+}
+
+hovering_left_arrow = function() {
+    var arrow_w = sprite_get_width(spr_setas)
+    var arrow_h = sprite_get_height(spr_setas)
+    return point_in_rectangle(
+        mouse_x,
+        mouse_y,
+        x + arrow_x,
+        y + arrow_y,
+        x + arrow_x + arrow_w,
+        y + arrow_y + arrow_h
+    )
+}
+
+hovering_right_arrow = function() {
+    var arrow_w = sprite_get_width(spr_setas)
+    var arrow_h = sprite_get_height(spr_setas)
+    return point_in_rectangle(
+        mouse_x,
+        mouse_y,
+        x + arrow_x + arrow_w + arrow_gap,
+        y + arrow_y,
+        x + arrow_x + arrow_w + arrow_gap + arrow_w,
+        y + arrow_y + arrow_h
+    )
 }
 
 hovering_any_slot = function() {
@@ -46,6 +87,37 @@ hovering_any_slot = function() {
     return undefined
 }
 
+is_hovering_stamp = function() {
+    var stamp_w = sprite_get_width(spr_carimbo) * stamp_scale
+    var stamp_h = sprite_get_width(spr_carimbo) * stamp_scale
+    var stamp_x = get_width() - padding
+    var stamp_y = get_height() - padding * 2
+    
+    
+    return point_in_rectangle(
+        mouse_x,
+        mouse_y,
+        x + stamp_x - stamp_w,
+        y + stamp_y - stamp_h,
+        x + stamp_x,
+        y + stamp_y
+    )
+}
+
+stampable = function() {
+    for(var i = 0; i < array_length(processed_blocks); i++) {
+        var block = processed_blocks[i]
+        
+        if(!is_instanceof(block.block, SentenceSlot)) continue;
+        
+        if(!block.block.has_content()) {
+            return false
+        }
+    }
+    
+    return true
+}
+
 build_layout = function() {
     processed_blocks = []
     
@@ -69,7 +141,9 @@ build_layout = function() {
             
             array_push(processed_blocks, {
                 gx: x + _x,
-                gy: y + _y,
+                gy: room_y + _y,
+                x: _x,
+                y: _y,
                 width: w,
                 height: h,
                 block: block
@@ -79,8 +153,8 @@ build_layout = function() {
         } else {
             var words = string_split(block.content, " ")
             
-            for (var w_i = 0; w_i < array_length(words); w_i++) {
-                var word = words[w_i]
+            for (var j = 0; j < array_length(words); j++) {
+                var word = words[j]
                 if (word == "") continue
                 
                 var w = string_width(word) * text_scale
@@ -93,7 +167,9 @@ build_layout = function() {
                 
                 array_push(processed_blocks, {
                     gx: x + _x,
-                    gy: y + _y,
+                    gy: room_y + _y,
+                    x: _x,
+                    y: _y,
                     width: w,
                     height: h,
                     block: block,
@@ -105,12 +181,102 @@ build_layout = function() {
         }
     }
     
-    content_height = _y + padding
     draw_set_font(prev_font)
+    
+    var arrow_w = sprite_get_width(spr_setas)
+    var arrow_h = sprite_get_height(spr_setas)
+    arrow_x = get_width() - padding - arrow_w * 2 - arrow_gap + 8
+    arrow_y = stat_view_height - arrow_h
+    
+    y = room_y // reset de segurança
+    
+    content_height = _y + padding
+}
+
+get_raw_text = function() {
+    var text = ""
+    
+    for (var i = 0; i < array_length(sentence.blocks); i++) {
+        var block = sentence.blocks[i]
+        var content = is_instanceof(block, SentenceSlot) 
+            ? (block.has_content() ? block.content : "_") 
+            : block.content
+        
+        var first_char = string_char_at(content, 1)
+        var no_space = (text == "" || first_char == "," || first_char == "!" || first_char == ".")
+        
+        text += (no_space ? "" : " ") + content
+    }
+    
+    return text
+}
+
+change_sentence = function(num, forwards = true) {
+    sentence = get_sentence(num)
+    
+    with(obj_sentence) {
+        if(other.id == id) continue;
+        
+        if(other.sentence == sentence) {
+            if(forwards) {
+                other.next_sentence()
+            } else {
+                other.prev_sentence()
+            }
+            
+            return
+        }
+    }
+    
+    for (var i = 0; i < array_length(processed_blocks); i++) {
+    	var block = processed_blocks[i]
+        
+        if(!is_instanceof(block.block, SentenceSlot)) continue;
+        
+        if(block.block.has_content()) {
+            create_paper(block.block.pop_term(), 50, 90, false)
+        }
+    }
+    
+    //sentence = get_sentence(num)
+    build_layout()
+    
+    if(tween) {
+        tween.cancel()
+    }
+    
+    tween = tween_sequence()
+        .next(
+            create_tween(id, "y", y - 6, ms(75))
+                .ease(ANIMATION_EASINGS.OUT_CIRC)
+        )
+        .next(
+            create_tween(id, "y", y, ms(300))
+                .ease(ANIMATION_EASINGS.OUT_BOUNCE)
+        )
+}
+
+next_sentence = function() {
+    sentence_index++
+    // 30 é o numero de frases, hardcoded mesmo pq não aprendo
+    if(sentence_index > 30 - 1) {
+        sentence_index = 0
+    }
+    change_sentence(sentence_index)
+}
+
+prev_sentence = function() {
+    sentence_index--
+    if(sentence_index < 0) {
+        // 30 é o numero de frases, hardcoded mesmo pq não aprendo
+        sentence_index = 30 - 1
+    }
+    change_sentence(sentence_index, false)
 }
 
 init = function() {
-    sentence = get_sentence(instance_number(object_index) - 1)
+    sentence_index = instance_number(object_index) - 1
+    sentence = get_sentence(sentence_index)
     build_layout()
 }
 
@@ -145,27 +311,5 @@ drop = function(data) {
     remove_frame = false
 }
 
-change_sentence = function(num) {
-    for (var i = 0; i < array_length(processed_blocks); i++) {
-    	var block = processed_blocks[i]
-        
-        if(!is_instanceof(block.block, SentenceSlot)) continue;
-        
-        if(block.block.has_content()) {
-            create_paper(block.pop_term(), 50, 90)
-        }
-    }
-    
-    sentence = get_sentence(num)
-    build_layout()
-}
-
-next_sentence = function() {
-    
-}
-
-prev_sentence = function() {
-    
-}
-
+init()
 ROOT.events.connect("paper-drop", drop)
