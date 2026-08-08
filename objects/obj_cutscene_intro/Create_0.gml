@@ -11,8 +11,6 @@ text_att = 0;
 
 can_skip = 0;
 
-window_set_size(window_get_width()*3, window_get_height()*3)
-
 c_preto = make_colour_rgb(26, 22, 29);
 c_verm = make_colour_rgb(148, 36, 56);
 c_azul = make_colour_rgb(32, 85, 104);

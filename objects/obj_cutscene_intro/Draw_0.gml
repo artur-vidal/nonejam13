@@ -412,9 +412,9 @@ case 2:
 						draw_alpha += draw_alpha_speed;
 					}
 			
-					draw_sprite_ext(spr_cs_tv, 0, 0, 0, 1, 1, 0, -1, 1);
-					draw_sprite_ext(spr_cs_luz, image_index, 0, -4, 1, 1, 0, -1, 1);
-					draw_sprite_ext(spr_cs_jornalista, image_index, 0, 0, 1, 1, 0, -1, 1);
+					draw_sprite_ext(spr_cs_tv, 0, 0, 0, 1, 1, 0, -1, draw_alpha);
+					draw_sprite_ext(spr_cs_luz, image_index, 0, -4, 1, 1, 0, -1, draw_alpha);
+					draw_sprite_ext(spr_cs_jornalista, image_index, 0, 0, 1, 1, 0, -1, draw_alpha);
 		
 					text_speed++;
 					if (text_speed mod 5 == 0)
