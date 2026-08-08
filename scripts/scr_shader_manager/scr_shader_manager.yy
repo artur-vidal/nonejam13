@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_shader_manager",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_shader_manager",
+  "parent":{
+    "name":"Utilitários",
+    "path":"folders/Scripts/Utilitários.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

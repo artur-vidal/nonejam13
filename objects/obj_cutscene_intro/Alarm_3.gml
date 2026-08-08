@@ -1,0 +1,1 @@
+ROOT.goto_day(1)

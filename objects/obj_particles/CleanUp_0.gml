@@ -1,0 +1,3 @@
+part_emitter_destroy(poof_ps, poof_emitter)
+part_type_destroy(poof_type)
+part_system_destroy(poof_ps)

@@ -1,0 +1,1 @@
+set_cursor(0)
