@@ -91,21 +91,23 @@ function NewsResult(_sentence) constructor {
             modifiers.celebrities += term.modifiers.celebrities
             modifiers.polemics += term.modifiers.polemics
             
-            bias_sum *= ROOT.state.get_upgrade_effect(Upgrades.TERMOS)
+            
         }
         
+        bias_sum *= ROOT.state.get_upgrade_effect(Upgrades.TERMOS)
         modifiers.bias *= bias_sum
+        
         self.modifiers = modifiers
         
         self.factor = get_factor()
         
         self.others.corruption = (self.modifiers.bias / 2) + ((self.modifiers.polemics) * (self.modifiers.economy + 1) / 5)
-        self.others.violence_increase = ((self.modifiers.rage * 3) + (power(abs(self.others.corruption), 1.3) * (self.others.corruption < 0 ? -1 : 1))) * (ROOT.state.get_upgrade_effect(Upgrades.APELATIVO) / 5)
-        self.others.confidence_increase = (self.modifiers.bias - 2) + self.others.corruption
-        self.others.seriousness_increase = -power(abs(self.modifiers.ordinary), 1.6) * sign(self.modifiers.ordinary)
+        self.others.violence_increase = ((self.modifiers.rage * 2.5) + (power(abs(self.others.corruption), 1.2) * (self.others.corruption < 0 ? -1 : 1))) * (1 + frac(ROOT.state.get_upgrade_effect(Upgrades.APELATIVO) / 5))
+        self.others.confidence_increase = (self.modifiers.bias - 1) + self.others.corruption * 2
+        self.others.seriousness_increase = -power(1 + abs(self.modifiers.ordinary), 1.6) * sign(self.modifiers.ordinary)
         
         // informações aleatórias
-        if(self.factor > 2.75) {
+        if(self.factor > 2.5) {
             self.others.additional_point = true
         }
         
@@ -720,6 +722,10 @@ function get_sentence(index) {
             new SentenceSlot(TermTypes.OBJECT),
             new SentenceBlock("encontrados dentro de Railux."),
         ], new NewsModifiers(0.0, 1, 2.0, 0.5)),
+        new Sentence([
+            new SentenceSlot(TermTypes.LOCATION),
+            new SentenceBlock("é transformado em centro turístico."),
+        ], new NewsModifiers(0.0, 1, 2.0, 1)),
     ]
     
     return _sentences[index]
@@ -759,7 +765,7 @@ function get_upgrades(id = undefined) {
             description: "Noticias com assuntos polêmicos ou que causem ódio são {0}% mais efetivas, mas também aumentam a violência em {0}%",
             flavor: "Choquei!",
             effect: [1.1, 1.25, 1.45],
-            zero: 1
+            zero: 1,
         },
         {
             id: Upgrades.VOCABULARIO,

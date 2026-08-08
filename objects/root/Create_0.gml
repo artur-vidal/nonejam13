@@ -8,6 +8,7 @@ cursor = singleton(obj_cursor)
 
 application_surface_draw_enable(false)
 show_debug_overlay(false)
+audio_group_load(audiogroup_music)
 
 day_ambiences = [
     msc_ambience_1,
@@ -29,7 +30,7 @@ state = {
     day: 1,
     
     ending: function() {
-        if(self.confidence < 10) {
+        if(self.confidence < 10 || self.people < 1000000) {
             return 3
         } else if (self.violence > 80) {
             return 1

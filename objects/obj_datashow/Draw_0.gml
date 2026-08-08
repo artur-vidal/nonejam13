@@ -11,7 +11,7 @@ if(active) {
     var hw = sprite_width / 2
     var hh = sprite_height / 2
     
-    var med_sprites = sprite_get_number(spr_med_conf)
+    var med_sprites = sprite_get_number(spr_med_conf) - 1 
     var med_w = sprite_get_width(spr_med_conf)
     var med_h = sprite_get_height(spr_med_conf)
     
@@ -27,15 +27,15 @@ if(active) {
     
     var conf = ROOT.state.confidence
     draw_text_transformed(hw - 20, hh - 28, "Confiança", 0.9, 0.9, 0)
-    draw_sprite(spr_med_conf, max(0, floor(conf / 100 * med_sprites)), hw + 24 - med_w / 2, hh - 22)
+    draw_sprite(spr_med_conf, clamp(floor(conf / 100 * med_sprites), 0, med_sprites), hw + 24 - med_w / 2, hh - 22)
     
     var viol = ROOT.state.violence
     draw_text_transformed(hw - 20, hh, "Violência", 0.9, 0.9, 0)
-    draw_sprite(spr_med_viol, max(0, floor(viol / 100 * med_sprites)), hw + 24 - med_w / 2, hh + 6)
+    draw_sprite(spr_med_viol, clamp(floor(viol / 100 * med_sprites), 0, med_sprites), hw + 24 - med_w / 2, hh + 6)
     
     var serie = ROOT.state.seriousness
     draw_text_transformed(hw - 20, hh + 28, "Seriedade", 0.9, 0.9, 0)
-    draw_sprite(spr_med_serie, max(0, floor(serie / 100 * med_sprites)), hw + 24 - med_w / 2, hh + 34)
+    draw_sprite(spr_med_serie, clamp(floor(serie / 100 * med_sprites), 0, med_sprites), hw + 24 - med_w / 2, hh + 34)
     
     draw_set_font(prev_font)
     draw_set_alpha(1)

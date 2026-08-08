@@ -57,13 +57,13 @@ is_full = function() {
 }
 
 all_added = function() {
-    return instance_number(obj_paper) == 0 && ended_news()
+    return instance_number(obj_paper) == 0 && is_full() && ended_news()
 }
 
 retrieve_last_box_term = function() {
     if(array_length(boxed_terms) > 0) {
         var paper_controller = singleton(obj_paper_controller)
-        var x1 = paper_controller.get_drag_area().x1 + 16
+        var x1 = paper_controller.get_drag_area().x2 / 2 + 16
         var y1 = paper_controller.get_drag_area().y1 + 16
         var x2 = paper_controller.get_drag_area().x2 - 16
         var y2 = paper_controller.get_drag_area().y2 - 16

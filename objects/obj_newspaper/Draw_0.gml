@@ -28,6 +28,12 @@ for (var i = 0; i < array_length(processed_blocks); i++) {
                 draw_line(_x, _y + tok.height / 2, _x + tok.width, _y + tok.height / 2)
                 draw_set_color(#07070E)
             } else {
+                if(tok.cuttable && !tok.cut) {
+                    set_term_type_colour(tok.headline_term.get_term().type)
+                    draw_line(_x, _y + tok.height - 1, _x + tok.width, _y + tok.height - 1)
+                    draw_line(_x, _y + tok.height, _x + tok.width, _y + tok.height)
+                }
+                draw_set_color(#07070E)
                 draw_text_transformed(_x, _y, tok.text, text_scale, text_scale, 0)
             }
         }

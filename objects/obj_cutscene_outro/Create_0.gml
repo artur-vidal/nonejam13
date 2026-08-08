@@ -31,9 +31,9 @@ scribble_color_set("c_cinza", c_cinza_f);
 text_f =
 [
 "[c_verm]Data[/c]: 07 de Fevereiro, 1984.\nA [c_verm]Grande Nação de Angistânia[/c]\nse tornou a maior potência mundial!\nAdorada seja [c_verm]Angistânia[/c]!",
-"[c_azul]Data[/c]: 07 de Fevereiro, 1984.\nA [c_azul]Grande Nação de Angistânia[/c]\nfoi bombardeada pelo [c_azul]Taquistão[/c]!\nPaz para [c_azul]Angistânia[/c]!",
+"[c_azul]Data[/c]: 07 de Fevereiro, 1984.\nA [c_azul]Grande Nação de Angistânia[/c]\nfoi bombardeada [c_verm]violentamente[/c] pelo [c_azul]Taquistão[/c]!\nPaz para [c_azul]Angistânia[/c]!",
 "[c_verde]Data[/c]: 07 de Fevereiro, 1984.\nA [c_verde]Grande Nação de Angistânia[/c]\nfoi anexada pela [c_verde]República dos Abacates[/c]!\nFuturo para [c_verde]Angistânia[/c] e o Mundo!",
-"[c_cinza]Data[/c]: 07 de Fevereiro 1984.\nA [c_cinza]Grande Nação de Angistânia[/c] não é mais\nlevada a sério!\nVocê perdeu seu emprego[c_cinza]...[/c] Talvez a vida[c_cinza]...[/c]",
+"[c_cinza]Data[/c]: 07 de Fevereiro 1984.\nA [c_cinza]Grande Nação de Angistânia[/c] não \nconfia mais no seu trabalho!\nVocê perdeu seu emprego[c_cinza]...[/c] Talvez a vida[c_cinza]...[/c]",
 
-"Obrigado por jogar!\n\n[c_cinza]Artes[/c]: Azeddo   [c_cinza]Programação[/c]: Tuta\n\nJogo criado para [c_cinza]NoneJam 13[/c]."
+$"Final {ROOT.state.ending() + 1} de 4\nObrigado por jogar!\n\n[c_cinza]Artes[/c]: Azeddo   [c_cinza]Programação[/c]: Tuta\n\nJogo criado para [c_cinza]NoneJam 13[/c]."
 ];

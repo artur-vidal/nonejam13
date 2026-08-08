@@ -258,8 +258,8 @@ change_sentence = function(num, forwards = true) {
 
 next_sentence = function() {
     sentence_index++
-    // 30 é o numero de frases, hardcoded mesmo pq não aprendo
-    if(sentence_index > 30 - 1) {
+    // 31 é o numero de frases, hardcoded mesmo pq não aprendo
+    if(sentence_index > 31 - 1) {
         sentence_index = 0
     }
     change_sentence(sentence_index)
@@ -268,8 +268,8 @@ next_sentence = function() {
 prev_sentence = function() {
     sentence_index--
     if(sentence_index < 0) {
-        // 30 é o numero de frases, hardcoded mesmo pq não aprendo
-        sentence_index = 30 - 1
+        // 31 é o numero de frases, hardcoded mesmo pq não aprendo
+        sentence_index = 31 - 1
     }
     change_sentence(sentence_index, false)
 }

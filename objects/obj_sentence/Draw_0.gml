@@ -34,7 +34,7 @@ var prev_font = draw_get_font()
 draw_set_font(fnt_paper)
 
 draw_set_colour(#07070E)
-draw_text_transformed(x + padding, y + content_height + 8, $"{sentence_index + 1} / 30", 0.4, 0.4, 0)
+draw_text_transformed(x + padding, y + content_height + 8, $"{sentence_index + 1} / 31", 0.4, 0.4, 0)
 
 for (var i = 0; i < array_length(processed_blocks); i++) {
     draw_set_colour(#07070E)
