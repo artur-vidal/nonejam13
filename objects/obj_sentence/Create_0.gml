@@ -11,7 +11,7 @@ content_height = 0
 line_h = 12
 space_width = 4
 padding = 8
-stat_view_height = 60
+stat_view_height = 30
 
 text_scale = 0.5
 
@@ -98,9 +98,9 @@ is_hovering_stamp = function() {
         mouse_x,
         mouse_y,
         x + stamp_x - stamp_w,
-        y + stamp_y - stamp_h,
+        y + stamp_y - stamp_h + 1,
         x + stamp_x,
-        y + stamp_y
+        y + stamp_y + 1
     )
 }
 
@@ -185,8 +185,8 @@ build_layout = function() {
     
     var arrow_w = sprite_get_width(spr_setas)
     var arrow_h = sprite_get_height(spr_setas)
-    arrow_x = get_width() - padding - arrow_w * 2 - arrow_gap + 8
-    arrow_y = stat_view_height - arrow_h
+    arrow_x = padding + arrow_gap - 6
+    arrow_y = get_height() - arrow_h - 12
     
     y = room_y // reset de segurança
     

@@ -117,11 +117,11 @@ init = function(_sentences, _additional_people, _raw_results) {
                 .on_complete(function() { audio_play_sound(snd_people_riser, 0, 0) })
         )
         .next(
-            create_tween(people_indicator, "y", 80, ms(500))
+            create_tween(people_indicator, "y", 88, ms(700))
                 .ease(ANIMATION_EASINGS.OUT_CUBIC)
         )
         .next(
-            create_tween(people_indicator, "y", 56, ms(300))
+            create_tween(people_indicator, "y", 60, ms(200))
                 .ease(ANIMATION_EASINGS.IN_CUBIC)
                 .on_complete(function() {
                     audio_stop_sound(snd_people_riser)

@@ -55,7 +55,7 @@ switch (scene)
 			draw_sprite_ext(spr_cs_tv_efeito, image_index, 0, 0, 1, 1, 0, -1, draw_alpha);
 		
 			text_speed++;
-			if (text_speed mod 25 == 0)
+			if (text_speed mod 20 == 0)
 			{
 				var len = string_length(text[0]);
 				if (text_att >= len)
@@ -94,7 +94,7 @@ switch (scene)
 		draw_sprite(spr_cs_jornalista, image_index, 0, 0)
 		
 		text_speed++;
-		if (text_speed mod 5 == 0)
+		if (text_speed mod 3 == 0)
 		{
 			var len = string_length(text[1]);
 			if (text_att >= len)
@@ -133,7 +133,7 @@ switch (scene)
 		draw_sprite(spr_cs_mapa, image_index, 0, 0)
 		
 				text_speed++;
-		if (text_speed mod 5 == 0)
+		if (text_speed mod 3 == 0)
 		{
 			var len = string_length(text[2]);
 			if (text_att >= len)
@@ -170,8 +170,8 @@ switch (scene)
 		draw_sprite(spr_cs_luz, image_index ,0, -4);
 		draw_sprite(spr_cs_cobra, image_index, 0, 0)
 		
-				text_speed++;
-		if (text_speed mod 5 == 0)
+        text_speed++;
+		if (text_speed mod 3 == 0)
 		{
 			var len = string_length(text[3]);
 			if (text_att >= len)
@@ -254,7 +254,7 @@ switch (scene)
 					draw_sprite_ext(spr_cs_jornalista, image_index, 0, 0, 1, 1, 0, -1, draw_alpha);
 		
 					text_speed++;
-					if (text_speed mod 5 == 0)
+					if (text_speed mod 3 == 0)
 					{
 						var len = string_length(text[4]);
 						if (text_att >= len)
@@ -294,7 +294,7 @@ switch (scene)
 			draw_sprite_ext(spr_cs_gianno, image_index, 0, 0, 1, 1, 0, -1, 1);
 			
 						text_speed++;
-					if (text_speed mod 5 == 0)
+					if (text_speed mod 3 == 0)
 					{
 						var len = string_length(text[5]);
 						if (text_att >= len)
@@ -333,7 +333,7 @@ switch (scene)
 			draw_sprite(spr_cs_jornal, 0, 0, 0);
 			
 									text_speed++;
-					if (text_speed mod 5 == 0)
+					if (text_speed mod 3 == 0)
 					{
 						var len = string_length(text[6]);
 						if (text_att >= len)
@@ -417,7 +417,7 @@ case 2:
 					draw_sprite_ext(spr_cs_jornalista, image_index, 0, 0, 1, 1, 0, -1, draw_alpha);
 		
 					text_speed++;
-					if (text_speed mod 5 == 0)
+					if (text_speed mod 3 == 0)
 					{
 						var len = string_length(text[7]);
 						if (text_att >= len)
@@ -456,7 +456,7 @@ case 2:
 		draw_sprite_ext(spr_cs_carta, image_index, 0, 0, 1, 1, 0, -1, 1);
 		
 		text_speed++;
-					if (text_speed mod 5 == 0)
+					if (text_speed mod 3 == 0)
 					{
 						var len = string_length(text[8]);
 						if (text_att >= len)
@@ -495,7 +495,7 @@ case 2:
 		draw_sprite_ext(spr_cs_gianno, image_index, 0, 0, 1, 1, 0, -1, 1);
 		
 		text_speed++;
-					if (text_speed mod 5 == 0)
+					if (text_speed mod 3 == 0)
 					{
 						var len = string_length(text[9]);
 						if (text_att >= len)
@@ -533,7 +533,7 @@ case 2:
 		draw_sprite_ext(spr_cs_cobra, image_index, 0, 0, 1, 1, 0, -1, 1);
 		
 		text_speed++;
-					if (text_speed mod 5 == 0)
+					if (text_speed mod 3 == 0)
 					{
 						var len = string_length(text[10]);
 						if (text_att >= len)

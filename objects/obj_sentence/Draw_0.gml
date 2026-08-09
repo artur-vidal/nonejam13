@@ -34,7 +34,7 @@ var prev_font = draw_get_font()
 draw_set_font(fnt_paper)
 
 draw_set_colour(#07070E)
-draw_text_transformed(x + padding, y + content_height + 8, $"{sentence_index + 1} / 31", 0.4, 0.4, 0)
+draw_text_transformed(x + padding, y + arrow_y - 6, $"{sentence_index + 1} / 31", 0.4, 0.4, 0)
 
 for (var i = 0; i < array_length(processed_blocks); i++) {
     draw_set_colour(#07070E)
@@ -63,4 +63,4 @@ draw_set_colour(c_white)
 // carimbo
 var stamp_x = get_width() - padding
 var stamp_y = get_height() - padding * 2
-draw_sprite_ext(spr_carimbo, stampable() + submitted, x + stamp_x, y + stamp_y, stamp_scale, stamp_scale, -4, c_white, 1)
+draw_sprite_ext(spr_carimbo, stampable() + submitted, x + stamp_x, y + stamp_y, stamp_scale, stamp_scale, -4, c_white, 2)
