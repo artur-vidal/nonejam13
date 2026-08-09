@@ -58,6 +58,7 @@ next = function() {
                         GAME.reset()
                     } else {
                         room_goto(rm_cutscene_outro)
+                        audio_stop_all()
                     }
                       
                     instance_destroy(id)
