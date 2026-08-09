@@ -330,6 +330,7 @@
     {"name":"spr_paper_check","order":2,"path":"sprites/spr_paper_check/spr_paper_check.yy",},
     {"name":"spr_paper_marker","order":9,"path":"sprites/spr_paper_marker/spr_paper_marker.yy",},
     {"name":"spr_paper","order":1,"path":"sprites/spr_paper/spr_paper.yy",},
+    {"name":"spr_particula","order":21,"path":"sprites/spr_particula/spr_particula.yy",},
     {"name":"spr_ponto_upgrade","order":3,"path":"sprites/spr_ponto_upgrade/spr_ponto_upgrade.yy",},
     {"name":"spr_porta","order":2,"path":"sprites/spr_porta/spr_porta.yy",},
     {"name":"spr_quadro_1","order":11,"path":"sprites/spr_quadro_1/spr_quadro_1.yy",},

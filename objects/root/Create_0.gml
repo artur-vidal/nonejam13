@@ -88,3 +88,4 @@ goto_day = function(num) {
 randomise()
 set_cursor(0)
 window_set_cursor(cr_none)
+particle_system.poof(30, 30)

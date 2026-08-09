@@ -1,4 +1,4 @@
-draw_set_colour(#422010)
+draw_set_colour(#3E2A2A)
 draw_rectangle(x + 8, room_height - height - 8, x + room_width - 8, room_height - 4, false)
 draw_set_colour(c_white)
 
