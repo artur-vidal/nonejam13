@@ -9,6 +9,8 @@ playing = true
 pause_surface = surface_create(room_width, room_height)
 overlay = false
 
+started_playing = false
+
 // DIA DIA DIA DIA DIA
 newspaper_index = -1
 day_news = [
@@ -53,7 +55,7 @@ max_terms = function() {
 }
 
 is_full = function() {
-    return term_count() == max_terms()
+    return (max_terms() != infinity) ? term_count() == max_terms() : true
 }
 
 all_added = function() {
@@ -91,6 +93,8 @@ ended_news = function() {
 }
 
 next_news = function() {
+    started_playing = true
+    
     newspaper_index++
     if(ended_news()) {
         return
@@ -143,10 +147,11 @@ resume = function() {
 }
 
 next_stage = function() {
-    pause(false)
     if(period == "day") {
+        pause(false)
         instance_create_depth(0, 0, 0, obj_day_to_night)
     } else if (period == "night") {
+        pause(false)
         instance_create_depth(0, 0, 0, obj_night_to_dawn)
     }
 }
@@ -184,8 +189,9 @@ to_night = function() {
 }
 
 to_dawn = function() {
+    period = "dawn"
     audio_stop_all()
-    room_goto(rm_dawn)
+    room_goto(rm_dawn_results)
     
     call_later(1, time_source_units_frames, function() {
         var results = []
@@ -216,6 +222,7 @@ reset = function() {
     period = "day"
     today_news = day_news[ROOT.state.day - 1]
     newspaper_index = -1
+    started_playing = false
 }
 
 // inicialização

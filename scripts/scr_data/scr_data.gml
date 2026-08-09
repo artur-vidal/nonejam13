@@ -59,6 +59,7 @@ function NewsModifiers(
 
 /// @param {Struct.Sentence} _sentence
 function NewsResult(_sentence) constructor {
+    str = _sentence.get_raw_text()
     terms = _sentence.get_terms()
     modifiers = _sentence.modifiers
     others = {
@@ -102,9 +103,11 @@ function NewsResult(_sentence) constructor {
         self.factor = get_factor()
         
         self.others.corruption = (self.modifiers.bias / 2) + ((self.modifiers.polemics) * (self.modifiers.economy + 1) / 5)
-        self.others.violence_increase = ((self.modifiers.rage * 2.5) + (power(abs(self.others.corruption), 1.2) * (self.others.corruption < 0 ? -1 : 1))) * (1 + frac(ROOT.state.get_upgrade_effect(Upgrades.APELATIVO) / 5))
+        self.others.violence_increase = (((self.modifiers.rage - 1) * 3) + (power(abs(self.others.corruption), 1.2) * (self.others.corruption < 0 ? -1 : 1))) * (1 + frac(ROOT.state.get_upgrade_effect(Upgrades.APELATIVO) / 5))
         self.others.confidence_increase = (self.modifiers.bias - 1) + self.others.corruption * 2
-        self.others.seriousness_increase = -power(1 + abs(self.modifiers.ordinary), 1.6) * sign(self.modifiers.ordinary)
+        
+        var ordinary_final = self.modifiers.ordinary - (self.modifiers.economy * 0.5)
+        self.others.seriousness_increase = -power(1 + abs(ordinary_final), 1.6) * sign(ordinary_final)
         
         // informações aleatórias
         if(self.factor > 2.5) {
@@ -253,6 +256,24 @@ function Sentence(_blocks, _modifiers = new NewsModifiers()) constructor {
         }
         
         return terms
+    }
+    
+    get_raw_text = function() {
+        var text = ""
+        
+        for (var i = 0; i < array_length(self.blocks); i++) {
+            var block = self.blocks[i]
+            var content = is_instanceof(block, SentenceSlot) 
+                ? (block.has_content() ? block.content : "_") 
+                : block.content
+            
+            var first_char = string_char_at(content, 1)
+            var no_space = (text == "" || first_char == "," || first_char == "!" || first_char == ".")
+            
+            text += (no_space ? "" : " ") + content
+        }
+        
+        return text
     }
 }
 
@@ -734,19 +755,19 @@ function get_sentence(index) {
 /// @param {real} id
 /// @returns {Array<Struct>|Struct}
 function get_upgrades(id = undefined) {
-    static _Upgrades = [
+    static _upgrades = [
         {
             id: Upgrades.CARTEIROS,
             name: "Aumento aos Carteiros",
-            description: "Aumenta o alcance geral das notícias em {0}%",
+            description: "Aumenta o alcance geral das notícias em [c_verde]{0}%[/c]",
             flavor: "Não somos tão maus, nossos carteiros ganham muito bem!",
-            effect: [1.1, 1.2, 1.35],
+            effect: [1.2, 1.3, 1.45],
             zero: 1
         },
         {
             id: Upgrades.TERMOS,
             name: "Termos e Condições",
-            description: "Notícias são {0}% menos enviesadas.",
+            description: "Notícias são [c_verde]{0}%[/c] menos enviesadas. Isso efetivamente reduz o ódio causado e ameniza alterações de confiança.",
             flavor: "Supostamente, supostamente, supostamente...",
             effect: [1.25, 1.4, 1.6],
             zero: 1
@@ -754,7 +775,7 @@ function get_upgrades(id = undefined) {
         {
             id: Upgrades.BESTEIROL,
             name: "Besteirol",
-            description: "Tópicos banais são {0}% mais efetivos.",
+            description: "Tópicos banais são [c_verde]{0}%[/c] mais efetivos. ",
             flavor: "O povo não quer saber de política! O povo quer...",
             effect: [1.15, 1.35, 1.55],
             zero: 1
@@ -762,7 +783,7 @@ function get_upgrades(id = undefined) {
         {
             id: Upgrades.APELATIVO,
             name: "Apelativo",
-            description: "Noticias com assuntos polêmicos ou que causem ódio são {0}% mais efetivas, mas também aumentam a violência em {0}%",
+            description: "Noticias com assuntos polêmicos ou que causem ódio são [c_verde]{0}%[/c] mais efetivas, mas também aumentam a violência em [c_verm]{1}%[/c]",
             flavor: "Choquei!",
             effect: [1.1, 1.25, 1.45],
             zero: 1,
@@ -770,7 +791,7 @@ function get_upgrades(id = undefined) {
         {
             id: Upgrades.VOCABULARIO,
             name: "Vocabulário",
-            description: "Aumenta a capacidade da caixa de termos para {0}.",
+            description: "Aumenta a capacidade da caixa de termos para [c_verde]{0}[/c].",
             flavor: "Nosso jornal também é aprendizado, sabe.",
             effect: [7, 8, infinity],
             zero: 5
@@ -778,7 +799,7 @@ function get_upgrades(id = undefined) {
         {
             id: Upgrades.BOAIMAGEM,
             name: "Boa Imagem",
-            description: "Sua confiança desce {0}% mais devagar.",
+            description: "Sua confiança desce [c_verde]{0}%[/c] mais devagar.",
             flavor: "Negócios são sobre \"parecer\".",
             effect: [1.1, 1.2, 1.4],
             zero: 1
@@ -786,12 +807,12 @@ function get_upgrades(id = undefined) {
     ]
     
     if(id != undefined) {
-        for (var i = 0; i < array_length(_Upgrades); i++) {
-        	var upgrade = _Upgrades[i]
+        for (var i = 0; i < array_length(_upgrades); i++) {
+        	var upgrade = _upgrades[i]
             if(upgrade.id == id) return upgrade;
         }
     } else {
-        return _Upgrades   
+        return _upgrades   
     }
 }
 

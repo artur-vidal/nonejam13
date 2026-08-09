@@ -14,13 +14,13 @@
   "exportDir":"",
   "name":"msc_ending",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Música",
+    "path":"folders/Sounds/Música.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"msc_ending.wav",
-  "volume":1.0,
+  "volume":0.8,
 }

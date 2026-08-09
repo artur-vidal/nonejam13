@@ -1,0 +1,1 @@
+init(["Frase faz frase com frase, mas frase intervém com uma gigante e enorme frase.", "Frase faz frase com frase, mas frase intervém com uma gigante e enorme frase."], 500000, new NewsResult(new Sentence()))

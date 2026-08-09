@@ -8,7 +8,7 @@ drop = function(data) {
         return
     }
     
-    if(GAME.is_full()) {
+    if(GAME.is_full() && ROOT.state.get_upgrade_effect(Upgrades.VOCABULARIO) != infinity) {
         return
     }
     

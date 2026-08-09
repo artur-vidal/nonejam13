@@ -192,25 +192,6 @@ build_layout = function() {
     
     content_height = _y + padding
 }
-
-get_raw_text = function() {
-    var text = ""
-    
-    for (var i = 0; i < array_length(sentence.blocks); i++) {
-        var block = sentence.blocks[i]
-        var content = is_instanceof(block, SentenceSlot) 
-            ? (block.has_content() ? block.content : "_") 
-            : block.content
-        
-        var first_char = string_char_at(content, 1)
-        var no_space = (text == "" || first_char == "," || first_char == "!" || first_char == ".")
-        
-        text += (no_space ? "" : " ") + content
-    }
-    
-    return text
-}
-
 change_sentence = function(num, forwards = true) {
     sentence = get_sentence(num)
     

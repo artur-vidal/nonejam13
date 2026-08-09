@@ -31,8 +31,8 @@ on_green = position_meeting(x, y, obj_greenbox)
 on_red = position_meeting(x, y, obj_redbox)
 
 // cor
-color.r = lerp(color.r, (on_green) ? 200 : 255, 0.2)
-color.g = lerp(color.g, (on_red) ? 200 : 255, 0.2)
+color.r = lerp(color.r, (on_green) ? 220 : 255, 0.2)
+color.g = lerp(color.g, (on_red) ? 220 : 255, 0.2)
 
 scale_decrement = lerp(scale_decrement, (on_red || on_green) ? base_scale * 0.2 : 0, 0.3)
 

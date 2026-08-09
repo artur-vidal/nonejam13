@@ -10,7 +10,7 @@ function singleton(obj){
         instance = instance_find(obj, 0)
         
         if(!instance) { 
-            object_set_persistent(obj, true)
+            // object_set_persistent(obj, true)
             instance = instance_create_depth(0, 0, 0, obj)   
         }
     }

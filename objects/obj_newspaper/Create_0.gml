@@ -1,4 +1,4 @@
-depth = -100
+depth = -50
 
 hovering_token = undefined
 

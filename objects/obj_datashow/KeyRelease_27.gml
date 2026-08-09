@@ -1,3 +1,5 @@
+if(!GAME.started_playing) exit;
+    
 if(!active) {
     GAME.pause()
     create_tween(id, "y", room_height - sprite_height, ms(1500))

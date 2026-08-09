@@ -22,8 +22,18 @@ xDevruichi - The Mighty Kingdom
 HydroGene - Malicious Scheme
 - https://hydrogene.itch.io/high-quality-16-bit-music
 
-## Efeitos Sonoros
-Papel:
+Hiramatsu Makoto - Lost
+- https://makotohiramatsu.itch.io/lost
+
+Moodytail - dungeon01
+- https://moodytail.itch.io/moodys-free-music-pack
+
+## Efeitos 
+Projetor
+- https://pixabay.com/sound-effects/technology-gem-projector-5-18114/
+- https://pixabay.com/sound-effects/film-special-effects-camera-shutter-clicks-310552/
+
+Papel
 - https://pixabay.com/sound-effects/film-special-effects-paper-245786/
 - https://pixabay.com/sound-effects/film-special-effects-tear-paper-103161/
 - https://pixabay.com/sound-effects/film-special-effects-paper-rip-fast-252617/
@@ -31,6 +41,11 @@ Papel:
 
 Caixas verde e vermelha
 - https://pixabay.com/sound-effects/film-special-effects-dropping-bag-95101/
+
+Porta
+- https://pixabay.com/sound-effects/film-special-effects-door-knock-291150/
+- https://pixabay.com/sound-effects/household-door-open-114615/
+- https://pixabay.com/sound-effects/household-door-close-123784/
 
 Troca de dia/noite
 - https://pixabay.com/sound-effects/film-special-effects-brass-fanfare-144755/
@@ -44,3 +59,8 @@ Sons de ambiente
 - https://pixabay.com/pt/sound-effects/natureza-27-urban-background-sound-17158/
 - https://pixabay.com/pt/sound-effects/tecnologia-room-tone-office-12-59350/
 - https://www.youtube.com/watch?v=emqEKeeHNJw
+
+Outros
+- https://pixabay.com/sound-effects/film-special-effects-click-buttons-ui-menu-sounds-effects-button-7-203601/
+- https://pixabay.com/pt/sound-effects/filme-e-efeitos-especiais-simple-whoosh-382724/
+- https://pixabay.com/sound-effects/film-special-effects-ui-sound-22-527807/

@@ -21,6 +21,6 @@ poof_emitter = part_emitter_create(poof_ps);
 
 poof = function(x, y) {
     part_particles_clear(poof_ps)
-    part_emitter_burst(poof_ps, poof_emitter, poof_type, 200);
+    // part_emitter_burst(poof_ps, poof_emitter, poof_type, 200);
     part_system_position(poof_ps, x, y);
 }

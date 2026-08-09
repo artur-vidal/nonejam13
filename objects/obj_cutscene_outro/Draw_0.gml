@@ -229,7 +229,12 @@ text_speed_f++;
 		{
 			if (mb_press_f)
 			{
-				game_end();
+                if(ROOT.state.played_game) {
+                    game_end();
+                } else {
+                    audio_stop_all()
+                    room_goto(rm_nox);
+                }
 			}
 			draw_sprite(spr_cs_mouse, image_index, room_width-32, room_height-24);
 		}

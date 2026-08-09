@@ -1,1 +1,1 @@
-ROOT.goto_day(1)
+ROOT.goto_day(ROOT.state.day)

@@ -40,8 +40,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Cutscene 01",
-    "path":"folders/Sprites/Cutscenes/Cutscene 01.yy",
+    "name":"Cutscenes",
+    "path":"folders/Sprites/Cutscenes.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

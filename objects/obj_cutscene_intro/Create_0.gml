@@ -13,8 +13,14 @@ can_skip = 0;
 c_preto = make_colour_rgb(26, 22, 29);
 c_verm = make_colour_rgb(148, 36, 56);
 c_azul = make_colour_rgb(32, 85, 104);
+c_verde_f = make_colour_rgb(102, 136, 34);
+c_cinza_f = make_colour_rgb(109, 130, 124);
+
+scribble_color_set("c_preto", c_preto);
 scribble_color_set("c_verm", c_verm);
 scribble_color_set("c_azul", c_azul);
+scribble_color_set("c_verde", c_verde_f);
+scribble_color_set("c_cinza", c_cinza_f);
 text = 
 [
 ". . .", "[c_azul]Data[/c]: 03 de Novembro, 1983.", "[c_azul]Anúncio diário[/c]: As relações globais estão\nfragilizadas!\nPerigosos conflitos estão emergindo.", "[c_verm]A Grande Nação[/c] está trabalhando para\ngarantir sua posição de liderança.\nAdorada seja [c_verm]Angistânia[/c]!",

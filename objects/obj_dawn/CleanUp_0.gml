@@ -1,0 +1,1 @@
+ROOT.events.disconnect("dawn-next-stage", next)

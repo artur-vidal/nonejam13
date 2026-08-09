@@ -4,7 +4,7 @@ alpha = 1
 
 destroy = function() {
     GAME.resume()
-    ROOT.events.emit("next-news")
+    ROOT.events.emit("door-knock")
     instance_destroy(id)
 }
 

@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"msc_ambience_5",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Música",
+    "path":"folders/Sounds/Música.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

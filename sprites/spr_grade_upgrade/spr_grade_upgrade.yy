@@ -23,7 +23,7 @@
   ],
   "name":"spr_grade_upgrade",
   "nineSlice":null,
-  "origin":0,
+  "origin":3,
   "parent":{
     "name":"Upgrades",
     "path":"folders/Sprites/Upgrades.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":0,
+    "yorigin":16,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

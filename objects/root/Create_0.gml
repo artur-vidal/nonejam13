@@ -9,6 +9,7 @@ cursor = singleton(obj_cursor)
 application_surface_draw_enable(false)
 show_debug_overlay(false)
 audio_group_load(audiogroup_music)
+audio_group_set_gain(audiogroup_music, 0.7)
 
 day_ambiences = [
     msc_ambience_1,
@@ -18,6 +19,11 @@ day_ambiences = [
     msc_ambience_5,
     msc_ambience_6,
 ]
+
+shake_dur = 0
+
+shake = function(steps) { shake_dur = steps }
+ROOT.events.connect("shake-screen", shake)
 
 state = {
     // status gerais
@@ -30,18 +36,20 @@ state = {
     day: 1,
     
     ending: function() {
-        if(self.confidence < 10 || self.people < 1000000) {
+        if(self.confidence < 15 || self.people < 10000000) {
             return 3
         } else if (self.violence > 80) {
             return 1
-        } else if (self.seriousness < 20) {
+        } else if (self.seriousness < 25) {
             return 2
         } else {
             return 0
         }
     },
     
-    // Upgrades
+    played_game: false,
+    
+    // upgrades
     upgrade_points: 0,
     upgrade_levels: [
         0, // Upgrades.CARTEIROS
@@ -54,7 +62,14 @@ state = {
     get_upgrade_effect: function(upgrade_id) {
         var up_level = self.upgrade_levels[upgrade_id]
         var upgrade = get_upgrades(upgrade_id)
-        return (up_level > 1) ? upgrade.effect[up_level - 1] : upgrade.zero
+        return (up_level > 0) 
+            ? upgrade.effect[up_level - 1] 
+            : upgrade.zero
+    },
+    get_next_upgrade_effect: function(upgrade_id) {
+        var up_level = min(3, self.upgrade_levels[upgrade_id] + 1)
+        var upgrade = get_upgrades(upgrade_id)
+        return upgrade.effect[up_level - 1] 
     }
 }
 

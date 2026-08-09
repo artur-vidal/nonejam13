@@ -18,7 +18,7 @@ if(active) {
     var prev_font = draw_get_font()
     
     draw_set_font(fnt_paper)
-    draw_set_alpha(alpha)
+    draw_set_alpha((oscillate ? random_range(0.8, 1) : alpha))
     draw_set_colour(#332211)
     draw_set_halign(fa_center)
     draw_set_valign(fa_middle)

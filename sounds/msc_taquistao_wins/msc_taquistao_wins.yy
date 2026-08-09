@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"msc_taquistao_wins",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Música",
+    "path":"folders/Sounds/Música.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

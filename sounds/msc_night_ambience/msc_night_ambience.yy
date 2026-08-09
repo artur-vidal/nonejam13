@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"msc_night_ambience",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Música",
+    "path":"folders/Sounds/Música.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

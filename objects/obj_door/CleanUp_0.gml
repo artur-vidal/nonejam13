@@ -1,0 +1,1 @@
+ROOT.events.disconnect("door-knock", door_knock)

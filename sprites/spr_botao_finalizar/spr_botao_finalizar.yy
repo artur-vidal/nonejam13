@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":6,
   "parent":{
-    "name":"Jornal",
-    "path":"folders/Sprites/Jornal.yy",
+    "name":"Interface",
+    "path":"folders/Sprites/Interface.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
