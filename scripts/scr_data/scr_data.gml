@@ -95,7 +95,7 @@ function NewsResult(_sentence) constructor {
             
         }
         
-        bias_sum *= ROOT.state.get_upgrade_effect(Upgrades.TERMOS)
+        bias_sum *= 1 - frac(ROOT.state.get_upgrade_effect(Upgrades.TERMOS))
         modifiers.bias *= bias_sum
         
         self.modifiers = modifiers
@@ -104,13 +104,17 @@ function NewsResult(_sentence) constructor {
         
         self.others.corruption = (self.modifiers.bias / 2) + ((self.modifiers.polemics) * (self.modifiers.economy + 1) / 5)
         self.others.violence_increase = (((self.modifiers.rage - 1) * 3) + (power(abs(self.others.corruption), 1.2) * (self.others.corruption < 0 ? -1 : 1))) * (1 + frac(ROOT.state.get_upgrade_effect(Upgrades.APELATIVO) / 5))
-        self.others.confidence_increase = (self.modifiers.bias - 1) + self.others.corruption * 2
+        self.others.confidence_increase = (self.modifiers.bias) + self.others.corruption * 2
+        
+        if(self.others.confidence_increase < 0) {
+            self.others.confidence_increase *= 1 - frac(ROOT.state.get_upgrade_effect(Upgrades.BOAIMAGEM))
+        }
         
         var ordinary_final = self.modifiers.ordinary - (self.modifiers.economy * 0.5)
         self.others.seriousness_increase = -power(1 + abs(ordinary_final), 1.6) * sign(ordinary_final)
         
         // informações aleatórias
-        if(self.factor > 2.5) {
+        if(self.factor > 2.25) {
             self.others.additional_point = true
         }
         
@@ -165,7 +169,7 @@ function NewsResult(_sentence) constructor {
             var bonus = 0
             for (var i = 0; i < array_length(matched_topics); i++) {
             	var topic = matched_topics[i]
-                bonus += 0.02 * (array_length(self.others.matching_topics[$ topic]) - 1)
+                bonus += 0.05 * (array_length(self.others.matching_topics[$ topic]) - 1)
             }
             self.factor *= (1 + bonus)
         }

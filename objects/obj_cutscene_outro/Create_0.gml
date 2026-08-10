@@ -39,11 +39,11 @@ text_f =
 "[c_verde]Data[/c]: 07 de Fevereiro, 1984.\nA [c_verde]Grande Nação de Angistânia[/c]\nfoi anexada pela [c_verde]República dos Abacates[/c]!\nFuturo para [c_verde]Angistânia[/c] e o Mundo!",
 "[c_cinza]Data[/c]: 07 de Fevereiro 1984.\nA [c_cinza]Grande Nação de Angistânia[/c] não \nconfia mais no seu trabalho!\nVocê perdeu seu emprego[c_cinza]...[/c] Talvez a vida[c_cinza]...[/c]",
 
-$"{ROOT.state.people} pessoas persuadidas.\nFinal {ROOT.state.ending() + 1} de 4\n\nObrigado por jogar!\n\n[c_cinza]Artes[/c]: Azeddo   [c_cinza]Programação[/c]: Tuta\n\nJogo criado para [c_cinza]NoneJam 13[/c]."
+$"{string_format_dots(ROOT.state.people)} cidadãos persuadidos.\nFinal {ROOT.state.ending() + 1} de 4\n\nObrigado por jogar!\n\n[c_cinza]Artes[/c]: Azeddo   [c_cinza]Programação[/c]: Tuta\n\nJogo criado em [c_cinza]9 dias[/c] para a [c_cinza]NoneJam 13[/c]."
 ];
 
 if(!ROOT.state.played_game) {
-    text_f[4] = $"MENTES DE PAPEL\n\n[c_cinza]Artes[/c]: Azeddo   [c_cinza]Programação[/c]: Tuta\n\nJogo criado para [c_cinza]NoneJam 13[/c]."
+    text_f[4] = $"MENTES DE PAPEL\n\n[c_cinza]Artes[/c]: Azeddo   [c_cinza]Programação[/c]: Tuta\n\nJogo criado em [c_cinza]9 dias[/c] para a [c_cinza]NoneJam 13[/c]."
 }
 
 image_speed = 0.05

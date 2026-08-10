@@ -23,19 +23,23 @@ if(active) {
     draw_set_halign(fa_center)
     draw_set_valign(fa_middle)
     
-    draw_text(hw, hh - 50, "SEU DESEMPENHO")
+    draw_text(hw, hh - 58, "SEU DESEMPENHO")
     
     var conf = ROOT.state.confidence
-    draw_text_transformed(hw - 20, hh - 28, "Confiança", 0.9, 0.9, 0)
-    draw_sprite(spr_med_conf, clamp(floor(conf / 100 * med_sprites), 0, med_sprites), hw + 24 - med_w / 2, hh - 22)
+    draw_text_transformed(hw - 20, hh - 40, "Confiança", 0.9, 0.9, 0)
+    draw_sprite(spr_med_conf, clamp(floor(conf / 100 * med_sprites), 0, med_sprites), hw + 32 - med_w / 2, hh - 34)
     
     var viol = ROOT.state.violence
-    draw_text_transformed(hw - 20, hh, "Violência", 0.9, 0.9, 0)
-    draw_sprite(spr_med_viol, clamp(floor(viol / 100 * med_sprites), 0, med_sprites), hw + 24 - med_w / 2, hh + 6)
+    draw_text_transformed(hw - 20, hh - 12, "Violência", 0.9, 0.9, 0)
+    draw_sprite(spr_med_viol, clamp(floor(viol / 100 * med_sprites), 0, med_sprites), hw + 32 - med_w / 2, hh - 6)
     
     var serie = ROOT.state.seriousness
-    draw_text_transformed(hw - 20, hh + 28, "Seriedade", 0.9, 0.9, 0)
-    draw_sprite(spr_med_serie, clamp(floor(serie / 100 * med_sprites), 0, med_sprites), hw + 24 - med_w / 2, hh + 34)
+    draw_text_transformed(hw - 20, hh + 16, "Seriedade", 0.9, 0.9, 0)
+    draw_sprite(spr_med_serie, clamp(floor(serie / 100 * med_sprites), 0, med_sprites), hw + 32 - med_w / 2, hh + 22)
+    
+    
+    draw_text(hw, hh + 44, "META")
+    draw_text_ext_transformed(hw, hh + 56, $"{string_format_dots(ROOT.state.people)} / 15.000.000", 12, sprite_width, .8, .8, 0)
     
     draw_set_font(prev_font)
     draw_set_alpha(1)

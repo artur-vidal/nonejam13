@@ -1,7 +1,7 @@
 current_id = -1
 
-padding = 4
-height = 60
+padding = 8
+height = 64
 
 get_content = function() {
     if(current_id == -1) {
@@ -11,7 +11,7 @@ get_content = function() {
     var up = get_upgrades(current_id)
     var ef = ROOT.state.get_next_upgrade_effect(current_id)
     
-    var str1 = $"[c_azul]{up.name}[/c] - {ROOT.state.upgrade_levels[up.id]}/3"
+    var str1 = $"[c_verde]{up.name}[/c] - {ROOT.state.upgrade_levels[up.id]}/3"
     var add_plus = (ROOT.state.upgrade_levels[up.id] < 3) ? "+" : ""
     
     var str2 = (up.id == Upgrades.APELATIVO) // lindo ternario

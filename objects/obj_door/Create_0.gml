@@ -1,4 +1,4 @@
-dialogues= [ // por dia
+dialogues = [ // por dia
     [
         "Bom dia, novo empregado.",
         "Me chamo Olivia. Sou eu quem vai trazer-lhe as notícias.",
@@ -6,10 +6,11 @@ dialogues= [ // por dia
         "...",
         "...Ah! Não te avisaram o que precisa fazer?",
         "Não se preocupe, não é nada demais. Você apenas precisa criar novas notícias.",
-        "Com as notícias na mesa, demarcamos algumas palavras que você pode retirar.",
-        "Retire [c_azul]todas as palavras[/c], e decida à direita se vai utilizá-las ou não.",
+        "Mas ouça bem. Não gosto de repetir.",
+        "Com as notícias na mesa, demarcamos algumas palavras que você pode usar.",
+        "Retire [c_azul]todas as palavras[/c] marcadas, e decida à direita se vai utilizá-las ou não.",
         "Você precisa [c_azul]encher a caixa verde[/c] antes de terminar seu turno diurno.",
-        "E caso decida incorretamente, o botão azul irá lhe auxiliar.",
+        "E caso mude alguma decisão, o botão azul irá lhe auxiliar.",
         "...",
         "Durante a noite.",
         "Você apenas precisa montar novas notícias usando quantas palavras quiser.",
@@ -22,37 +23,55 @@ dialogues= [ // por dia
     [
         "Bom dia, novo empregado.",
         "Espero que esteja se ambientando bem.",
-        "Sabe, que bom que temos o [c_cinza]Reino da Pleméria[/c] do nosso lado.",
-        "Aqui, as notícias do dia."
+        "Trouxe as notícias do dia...",
+        "...",
+        "Refletindo agora, acho que não esclareci muito bem as consequências do que propagamos.",
+        "Se não quiser ser demitido, ouça bem.",
+        "O objetivo de nossa [c_verm]Grande Nação[/c] é alcançar o poder por meio da informação.",
+        "Para isso, um balanço é necessário.",
+        "Civis não leriam um jornal que só fala de economia ou investimentos.",
+        "Mas os governantes, que também precisamos agradar, não leriam as notícias sobre romances alheios.",
+        "E além disso, assuntos polêmicos sempre vão desagradar alguém. E um povo enchido de ódio é incontrolável.",
+        "E temos que fazer isso enquanto engrandecemos minimamente as personalidades de nossa nação.",
+        "Caso contrário, os superiores podem ficar insatisfeitos.",
+        "Não é tanta coisa.",
+        "Até o fim da semana, o Alto Escalão definiu uma meta.",
+        "15.000.000 de pessoas.",
+        "Não se preocupe, nosso alcance é grande. Quanto mais pessoas lêem, mais outras pessoas vão ler. [c_azul]Como dominós.[/c]",
+        "Agora que entendeu melhor como as coisas funcionam... As notícias do dia.",
+        "Com licença. E boa sorte."
     ],
     [
-        "Bom dia, novo empregado.",
+        "Bom dia, empregado.",
         "Estava lendo as notícias... [c_verm]Lakira[/c] e [c_azul]Heraldo[/c] são um lindo casal, não acha?",
-        "As pessoas costumam preferir assuntos mais leves.",
+        "Civis comuns costumam preferir assuntos mais leves. Mas não exagere.",
         "Aqui, as notícias do dia.",
     ],
     [
         "Bom dia, empregado.",
         "Esses cantores deveriam tomar mais cuidado na televisão.",
-        "Aqueles taquistães..! São [c_verm]violentos[/c] por natureza.",
-        "Cuidado com o teor das notícias, empregado.",
+        "Aqueles taquistãos..! São [c_verm]violentos[/c] por natureza.",
+        "Cuidado com o teor das notícias, empregado. Ao agradar muito um grupo você desagrada outro.",
         "Aliás, nosso departamento está sendo mais reconhecido.",
         "[c_azul]Essa noite, você terá de montar uma notícia a mais.[/c]",
         "Aqui, as notícias do dia."
     ],
     [
-        "Bom dia, empregado.",
+        "Bom dia, colega.",
         "A [c_verde]República dos Abacates...[/c] Parece que vêem o mundo de maneira diferente.",
-        "A paz é apenas uma ilusão.",
+        "Nesses tempos, paz é apenas uma ilusão.",
         "Nossa secretaria é bem séria, empregado. [c_verm]A realidade é dura.[/c]",
         "Aqui, as notícias do dia."
     ],
     [
-        "Bom dia, empregado.",
+        "Bom dia, colega.",
         "Finalmente, parece que os taquistães vão desistir.",
-        "Espero que tenha tido bons resultados.",
-        "Amanhã acontecerá uma grande conferência entre as nações.",
-        "Se tudo ir bem, manteremos nosso emprego.",
+        "Eles são muito poderosos. Sem toda essa pressão acima deles, nosso povo estaria em perigo.",
+        "...",
+        "Não conte para ninguém que eu falei isso.",
+        "Enfim, espero que tenha tido bons resultados.",
+        "Amanhã acontecerá uma grande conferência entre as nações. E nossos superiores fazem parte dela.",
+        "Se tudo ir bem, manteremos nossos empregos.",
         "Aqui estão as notícias do dia. [c_verm]Adorada seja Angistânia,[/c] colega."
     ]
 ]
@@ -72,8 +91,8 @@ d_index = 0
 text_area = {
     x1: 12,
     y1: 12,
-    x2: 115,
-    y2: 60
+    x2: 114,
+    y2: 66
 }
 
 day_dialogue = function() {

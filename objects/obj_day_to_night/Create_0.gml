@@ -8,7 +8,7 @@ destroy = function() { instance_destroy(id); GAME.resume(); }
 
 tween_sequence()
     .next(
-        create_tween(id, "alpha", 1, seconds(1))
+        create_tween(id, "alpha", 1, seconds(2))
             .ease(ANIMATION_EASINGS.OUT_CUBIC)
             .on_complete(show_on)
     )

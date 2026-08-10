@@ -47,7 +47,7 @@ if (state == "talking") {
         .transform(.5, .5, 0)
         .wrap(160)
     
-    draw_rectangle_colour(text_area.x1 - 2, text_area.y1, text_area.x2 + 2, text_area.y2, c_black, c_black, c_black, c_black, false)
+    draw_roundrect_colour_ext(text_area.x1, text_area.y1, text_area.x2, text_area.y2, 8, 8, c_black, c_black, false)
     scribble_obj.draw(text_area.x1 + 8, text_area.y1 + 8)
     
     if(ended()) {

@@ -29,7 +29,7 @@ draw_roundrect_ext(
 if(GAME.period == "day") {
     // abrindo mais um espaço na area das caixas ali
     draw_roundrect_ext(
-        192, 
+        180, 
         96, 
         room_width,
         room_height, 

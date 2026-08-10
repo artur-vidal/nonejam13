@@ -20,7 +20,7 @@ switch (state) {
             var len = string_length(current_dialogue())
             text_pos = clamp(text_pos + text_speed, 0, len)
             if(text_pos % 3 == 0 && !ended()) {
-                audio_play_sound(snd_olivia, 0, 0, 1, 0, random_range(0.9, 1.1))
+                audio_play_sound(snd_olivia, 0, 0, 1, 0, random_range(0.8, 1))
             }
         }
         break

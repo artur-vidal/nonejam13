@@ -55,13 +55,13 @@ function set_cursor(i) {
 function set_term_type_colour(type) {
     switch (type) {
    	case TermTypes.SUBJECT:
-           draw_set_colour(#FFA0A0)
+           draw_set_colour(make_colour_rgb(148, 36, 56))
            break
    	case TermTypes.LOCATION:
-           draw_set_colour(#80DD70)
+           draw_set_colour(make_colour_rgb(102, 136, 34))
            break
    	case TermTypes.OBJECT:
-           draw_set_colour(#A0A0FF)
+           draw_set_colour(make_colour_rgb(32, 85, 104))
            break 
    }
 }
@@ -89,4 +89,18 @@ function RGB() constructor {
     compute = function() {
         return make_colour_rgb(self.r, self.g, self.b)
     } 
+}
+
+/// @description Formata um número grande colocando pontos a cada 3 dígitos
+/// @param {real} _number
+function string_format_dots(_number) {
+    var _str = string(_number);
+    var _len = string_length(_str);
+    
+    // tras pra frente
+    for (var i = _len - 3; i > 0; i -= 3) {
+        _str = string_insert(".", _str, i + 1);
+    }
+    
+    return _str;
 }

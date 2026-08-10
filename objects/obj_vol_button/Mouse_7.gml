@@ -2,7 +2,7 @@ if(blocked()) exit;
 
 // eu acho que isso ta logicamente invertido mas funciona :)
 if(toggle) {
-    audio_master_gain(0.5)
+    audio_master_gain(ROOT.default_volume)
     toggle = false
 } else {
     audio_master_gain(0)

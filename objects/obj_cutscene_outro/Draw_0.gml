@@ -212,7 +212,7 @@ draw_set_halign(1)
 draw_set_valign(1);
 
 text_speed_f++;
-			if (text_speed_f mod 3 == 0)
+			if (text_speed_f mod 4 == 0)
 			{
 				var len = string_length(text_f[4]);
 				if (text_att_f >= len)

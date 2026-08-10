@@ -29,7 +29,7 @@ alpha_animation = function() {
                 .delay(ms(150))
         )
         .next(
-            create_tween(id, "alpha", 1, 1)
+            create_tween(id, "alpha", 0.9, 1)
                 .delay(ms(75))
         )
         .on_complete(function() {

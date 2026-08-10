@@ -14,37 +14,44 @@ sentence2 = {
     value: ""
 }
 
+people_reach = {
+    x: -200,
+    y: 60,
+    alpha: 1,
+    value: "Cidadãos persuadidos:"
+}
+
 people = {
     x: -200,
-    y: 56,
+    y: 76,
     alpha: 1,
     value: ROOT.state.people
 }
 
 people_indicator = {
     x: -200,
-    y: 74,
+    y: 96,
     alpha: 1,
     value: 0
 }
 
 conf_indicator = {
     x: -200,
-    y: 80,
+    y: 100,
     alpha: 1,
     value: 0
 }
 
 viol_indicator = {
     x: -200,
-    y: 96,
+    y: 114,
     alpha: 1,
     value: 0
 }
 
 serie_indicator = {
     x: -200,
-    y: 112,
+    y: 132,
     alpha: 1,
     value: 0
 }
@@ -61,7 +68,7 @@ draw_slot = function(_struct, _op = true, scale = 1, _prefix = "", _suffix = "")
     if(is_real(_struct.value) && _op) {
         op_string = (_struct.value < 0 ? "-" : "+")
     }
-    var total_string = _prefix + (is_real(_struct.value) ? op_string + string(abs(round(_struct.value))) : _struct.value) + _suffix
+    var total_string = _prefix + (is_real(_struct.value) ? op_string + string_format_dots(abs(round(_struct.value))) : _struct.value) + _suffix
     
     var scribble_object = scribble(total_string)
         .starting_format("fnt_paper", c_white)
@@ -106,22 +113,27 @@ init = function(_sentences, _additional_people, _raw_results) {
     
     sequence = tween_sequence()
         .next(
-            create_tween(people, "x", 36, seconds(1))
+            create_tween(people_reach, "x", 12, seconds(1))
                 .delay(seconds(3))
                 .ease(ANIMATION_EASINGS.OUT_CUBIC)
         )
         .parallel(
-            create_tween(people_indicator, "x", 44, seconds(1))
+            create_tween(people, "x", 32, seconds(1))
                 .delay(seconds(3.5))
+                .ease(ANIMATION_EASINGS.OUT_CUBIC)
+        )
+        .parallel(
+            create_tween(people_indicator, "x", 44, seconds(1))
+                .delay(seconds(4))
                 .ease(ANIMATION_EASINGS.OUT_CUBIC)
                 .on_complete(function() { audio_play_sound(snd_people_riser, 0, 0) })
         )
         .next(
-            create_tween(people_indicator, "y", 88, ms(700))
+            create_tween(people_indicator, "y", 108, ms(700))
                 .ease(ANIMATION_EASINGS.OUT_CUBIC)
         )
         .next(
-            create_tween(people_indicator, "y", 60, ms(200))
+            create_tween(people_indicator, "y", 64, ms(200))
                 .ease(ANIMATION_EASINGS.IN_CUBIC)
                 .on_complete(function() {
                     audio_stop_sound(snd_people_riser)

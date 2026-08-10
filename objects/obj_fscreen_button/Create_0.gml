@@ -3,7 +3,7 @@ tween = undefined
 anim_ms = 300
 
 hovering = false
-toggle = false
+toggle = true
 
 hover = function() {
     if(tween) {

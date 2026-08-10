@@ -56,7 +56,7 @@ buy_upgrade = function() {
     if(remaining_points() > 0 && get_points() < 3) {
         ROOT.state.upgrade_levels[upgrade_id]++
         ROOT.state.upgrade_points--
-        audio_play_sound(snd_upgrade_up, 0, 0)
+        audio_play_sound(snd_button_click, 0, 0, 1, 0, 1.1)
         ROOT.events.emit("shake-screen", ms(75))
     }
 }
@@ -65,7 +65,7 @@ remove_upgrade = function() {
     if(get_points() > 0) {
         ROOT.state.upgrade_levels[upgrade_id]--
         ROOT.state.upgrade_points++
-        audio_play_sound(snd_upgrade_down, 0, 0)
+        audio_play_sound(snd_button_click, 0, 0, 1, 0, 0.8)
         ROOT.events.emit("shake-screen", ms(75))
     }
 }

@@ -6,10 +6,12 @@ shader_mgr = new ShaderManager()
 particle_system = singleton(obj_particles)
 cursor = singleton(obj_cursor)
 
+default_volume = 0.5
+
 application_surface_draw_enable(false)
 show_debug_overlay(false)
 audio_group_load(audiogroup_music)
-audio_group_set_gain(audiogroup_music, 0.7)
+audio_group_set_gain(audiogroup_music, 0.8)
 
 day_ambiences = [
     msc_ambience_1,
@@ -36,7 +38,7 @@ state = {
     day: 1,
     
     ending: function() {
-        if(self.confidence < 15 || self.people < 10000000) {
+        if(self.confidence < 15 || self.people < 15000000) {
             return 3
         } else if (self.violence > 80) {
             return 1
@@ -88,4 +90,5 @@ goto_day = function(num) {
 randomise()
 set_cursor(0)
 window_set_cursor(cr_none)
-particle_system.poof(30, 30)
+window_set_fullscreen(true)
+surface_resize(application_surface, display_get_width(), display_get_height())

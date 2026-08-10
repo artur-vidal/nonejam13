@@ -66,7 +66,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"NONEJAM13-3",
   "resources":[
@@ -398,7 +398,8 @@
     {"id":{"name":"spr_tela","path":"sprites/spr_tela/spr_tela.yy",},},
     {"id":{"name":"spr_triturador","path":"sprites/spr_triturador/spr_triturador.yy",},},
     {"id":{"name":"spr_tv_efeito","path":"sprites/spr_tv_efeito/spr_tv_efeito.yy",},},
-    {"id":{"name":"Sprite73","path":"sprites/Sprite73/Sprite73.yy",},},
+    {"id":{"name":"spr_upgrade_box","path":"sprites/spr_upgrade_box/spr_upgrade_box.yy",},},
+    {"id":{"name":"spr_vidro_janela","path":"sprites/spr_vidro_janela/spr_vidro_janela.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

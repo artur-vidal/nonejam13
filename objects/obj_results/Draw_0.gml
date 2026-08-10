@@ -3,7 +3,8 @@ if(sentence2.value != "") {
     draw_slot(sentence2, false, .7, "\"", "\"")
 }
 
-draw_sprite(spr_pessoas, 0, x + people.x - 24, people.y - 2)
+draw_sprite(spr_pessoas, 0, x + people.x - 20, people.y - 2)
+draw_slot(people_reach)
 draw_set_colour(people_color.compute())
 draw_slot(people, false)
 draw_set_colour(c_white)

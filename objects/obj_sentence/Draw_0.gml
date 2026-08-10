@@ -3,31 +3,29 @@ draw_rectangle_colour(x, y, x + get_width(), y + get_height(), #FFFFFD, #FFFFFD,
 // parte azul dos status e setinhas
 draw_rectangle_colour(x, y, x + get_width(), y + stat_view_height, #408B90, #408B90, #408B90, #408B90, false)
 var is_playing = GAME.playing // impedir q mudem de frame pausado
-if(!submitted) {
-    draw_sprite_ext(
-        spr_setas, 
-        hovering_left_arrow() && is_playing, 
-        x + arrow_x, 
-        y + arrow_y, 
-        1, 
-        1, 
-        0, 
-        c_white, 
-        1
-    )
-    
-    draw_sprite_ext(
-        spr_setas, 
-        hovering_right_arrow() && is_playing, 
-        x + arrow_x + sprite_get_width(spr_setas) * 2 + arrow_gap,
-        y + arrow_y, 
-        -1, 
-        1, 
-        0,
-        c_white, 
-        1
-    )
-}
+draw_sprite_ext(
+    spr_setas, 
+    hovering_left_arrow() && is_playing && !submitted, 
+    x + arrow_x, 
+    y + arrow_y, 
+    1, 
+    1, 
+    0, 
+    c_white, 
+    1
+)
+
+draw_sprite_ext(
+    spr_setas, 
+    hovering_right_arrow() && is_playing && !submitted, 
+    x + arrow_x + sprite_get_width(spr_setas) * 2 + arrow_gap,
+    y + arrow_y, 
+    -1, 
+    1, 
+    0,
+    c_white, 
+    1
+)
 
 // texto
 var prev_font = draw_get_font()

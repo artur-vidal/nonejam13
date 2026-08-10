@@ -341,6 +341,7 @@
     {"name":"spr_tela","order":10,"path":"sprites/spr_tela/spr_tela.yy",},
     {"name":"spr_triturador","order":4,"path":"sprites/spr_triturador/spr_triturador.yy",},
     {"name":"spr_tv_efeito","order":21,"path":"sprites/spr_tv_efeito/spr_tv_efeito.yy",},
-    {"name":"Sprite73","order":22,"path":"sprites/Sprite73/Sprite73.yy",},
+    {"name":"spr_upgrade_box","order":22,"path":"sprites/spr_upgrade_box/spr_upgrade_box.yy",},
+    {"name":"spr_vidro_janela","order":16,"path":"sprites/spr_vidro_janela/spr_vidro_janela.yy",},
   ],
 }

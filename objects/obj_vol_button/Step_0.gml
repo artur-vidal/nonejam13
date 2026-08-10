@@ -1,0 +1,1 @@
+toggle = audio_get_master_gain(0) == 0
